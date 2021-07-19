@@ -4,7 +4,7 @@ import 'package:collection/collection.dart';
 
 import 'package:chopper/chopper.dart';
 import 'package:chopper/chopper.dart' as chopper;
-import 'lasso.enums.swagger.dart' as enums;
+import 'lasso.enums.swagger.dart';
 export 'lasso.enums.swagger.dart';
 
 part 'lasso.swagger.chopper.dart';
@@ -1737,14 +1737,14 @@ class AccountUserRole {
       name: 'role',
       toJson: accountUserRoleRoleToJson,
       fromJson: accountUserRoleRoleFromJson)
-  final enums.AccountUserRoleRole? role;
+  final AccountUserRoleRole? role;
   @JsonKey(name: 'user')
   final int? user;
   @JsonKey(
       name: 'status',
       toJson: accountUserRoleStatusToJson,
       fromJson: accountUserRoleStatusFromJson)
-  final enums.AccountUserRoleStatus? status;
+  final AccountUserRoleStatus? status;
   @JsonKey(name: 'code')
   final String? code;
   @JsonKey(name: 'email')
@@ -1779,9 +1779,9 @@ class AccountUserRole {
 extension $AccountUserRoleExtension on AccountUserRole {
   AccountUserRole copyWith(
       {int? id,
-      enums.AccountUserRoleRole? role,
+      AccountUserRoleRole? role,
       int? user,
-      enums.AccountUserRoleStatus? status,
+      AccountUserRoleStatus? status,
       String? code,
       String? email,
       String? phone}) {
@@ -2019,12 +2019,12 @@ class ClientAddress {
       name: 'status',
       toJson: clientAddressStatusToJson,
       fromJson: clientAddressStatusFromJson)
-  final enums.ClientAddressStatus? status;
+  final ClientAddressStatus? status;
   @JsonKey(
       name: 'type',
       toJson: clientAddressTypeToJson,
       fromJson: clientAddressTypeFromJson)
-  final enums.ClientAddressType? type;
+  final ClientAddressType? type;
   @JsonKey(name: 'contact_name')
   final String? contactName;
   @JsonKey(name: 'company_name')
@@ -2108,8 +2108,8 @@ extension $ClientAddressExtension on ClientAddress {
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated,
       int? client,
-      enums.ClientAddressStatus? status,
-      enums.ClientAddressType? type,
+      ClientAddressStatus? status,
+      ClientAddressType? type,
       String? contactName,
       String? companyName,
       String? street1,
@@ -2173,7 +2173,7 @@ class ClientContact {
       name: 'type',
       toJson: clientContactTypeToJson,
       fromJson: clientContactTypeFromJson)
-  final enums.ClientContactType? type;
+  final ClientContactType? type;
   @JsonKey(name: 'client')
   final int? client;
   @JsonKey(name: 'first_name')
@@ -2240,7 +2240,7 @@ extension $ClientContactExtension on ClientContact {
       {int? id,
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated,
-      enums.ClientContactType? type,
+      ClientContactType? type,
       int? client,
       String? firstName,
       String? lastName,
@@ -2301,7 +2301,7 @@ class Client {
       name: 'status',
       toJson: clientStatusToJson,
       fromJson: clientStatusFromJson)
-  final enums.ClientStatus? status;
+  final ClientStatus? status;
   @JsonKey(name: 'url')
   final String? url;
   @JsonKey(name: 'phone')
@@ -2356,7 +2356,7 @@ extension $ClientExtension on Client {
       String? code,
       String? externalCode,
       String? name,
-      enums.ClientStatus? status,
+      ClientStatus? status,
       String? url,
       String? phone,
       List<int>? contacts,
@@ -2408,7 +2408,7 @@ class CrewAddress {
       name: 'status',
       toJson: crewAddressStatusToJson,
       fromJson: crewAddressStatusFromJson)
-  final enums.CrewAddressStatus? status;
+  final CrewAddressStatus? status;
   @JsonKey(name: 'street1')
   final String? street1;
   @JsonKey(name: 'street2')
@@ -2471,7 +2471,7 @@ extension $CrewAddressExtension on CrewAddress {
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated,
       int? crew,
-      enums.CrewAddressStatus? status,
+      CrewAddressStatus? status,
       String? street1,
       String? street2,
       String? street3,
@@ -2524,7 +2524,7 @@ class CrewContact {
       name: 'type',
       toJson: crewContactTypeToJson,
       fromJson: crewContactTypeFromJson)
-  final enums.CrewContactType? type;
+  final CrewContactType? type;
   @JsonKey(name: 'first_name')
   final String? firstName;
   @JsonKey(name: 'last_name')
@@ -2584,7 +2584,7 @@ extension $CrewContactExtension on CrewContact {
       {int? id,
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated,
-      enums.CrewContactType? type,
+      CrewContactType? type,
       String? firstName,
       String? lastName,
       String? email,
@@ -2642,7 +2642,7 @@ class CrewPosition {
       name: 'status',
       toJson: crewPositionStatusToJson,
       fromJson: crewPositionStatusFromJson)
-  final enums.CrewPositionStatus? status;
+  final CrewPositionStatus? status;
   @JsonKey(name: 'date_applied')
   final DateTime? dateApplied;
   @JsonKey(name: 'date_approved')
@@ -2652,9 +2652,9 @@ class CrewPosition {
   @JsonKey(name: 'rate')
   final String? rate;
   @JsonKey(name: 'rate_type')
-  final enums.CrewPositionRateType? rateType;
+  final CrewPositionRateType? rateType;
   @JsonKey(name: 'rate_source')
-  final enums.CrewPositionRateSource? rateSource;
+  final CrewPositionRateSource? rateSource;
   @JsonKey(name: 'rate_currency')
   final String? rateCurrency;
   static const fromJsonFactory = _$CrewPositionFromJson;
@@ -2710,13 +2710,13 @@ extension $CrewPositionExtension on CrewPosition {
       DateTime? dbDateUpdated,
       int? crew,
       int? position,
-      enums.CrewPositionStatus? status,
+      CrewPositionStatus? status,
       DateTime? dateApplied,
       DateTime? dateApproved,
       double? averageRating,
       String? rate,
-      enums.CrewPositionRateType? rateType,
-      enums.CrewPositionRateSource? rateSource,
+      CrewPositionRateType? rateType,
+      CrewPositionRateSource? rateSource,
       String? rateCurrency}) {
     return CrewPosition(
         id: id ?? this.id,
@@ -2804,7 +2804,7 @@ class CrewSettingsTravel {
       name: 'gender',
       toJson: crewSettingsTravelGenderToJson,
       fromJson: crewSettingsTravelGenderFromJson)
-  final enums.CrewSettingsTravelGender? gender;
+  final CrewSettingsTravelGender? gender;
   @JsonKey(name: 'frequent_flyers')
   final Object? frequentFlyers;
   @JsonKey(name: 'hotel_rewards')
@@ -2817,15 +2817,15 @@ class CrewSettingsTravel {
   final String? tsaPrecheck;
   @JsonKey(
       name: 'preferred_airlines',
-      defaultValue: <enums.CrewSettingsTravelPreferredAirlines>[])
-  final List<enums.CrewSettingsTravelPreferredAirlines>? preferredAirlines;
+      defaultValue: <CrewSettingsTravelPreferredAirlines>[])
+  final List<CrewSettingsTravelPreferredAirlines>? preferredAirlines;
   @JsonKey(name: 'travel_seating_preference')
-  final enums.CrewSettingsTravelTravelSeatingPreference?
+  final CrewSettingsTravelTravelSeatingPreference?
       travelSeatingPreference;
   @JsonKey(
       name: 'meal_preferences',
-      defaultValue: <enums.CrewSettingsTravelMealPreferences>[])
-  final List<enums.CrewSettingsTravelMealPreferences>? mealPreferences;
+      defaultValue: <CrewSettingsTravelMealPreferences>[])
+  final List<CrewSettingsTravelMealPreferences>? mealPreferences;
   @JsonKey(name: 'passport_list', defaultValue: <Passport>[])
   final List<Passport>? passportList;
   static const fromJsonFactory = _$CrewSettingsTravelFromJson;
@@ -2875,15 +2875,15 @@ class CrewSettingsTravel {
 extension $CrewSettingsTravelExtension on CrewSettingsTravel {
   CrewSettingsTravel copyWith(
       {bool? executive,
-      enums.CrewSettingsTravelGender? gender,
+      CrewSettingsTravelGender? gender,
       Object? frequentFlyers,
       Object? hotelRewards,
       Object? rentalCars,
       String? redress,
       String? tsaPrecheck,
-      List<enums.CrewSettingsTravelPreferredAirlines>? preferredAirlines,
-      enums.CrewSettingsTravelTravelSeatingPreference? travelSeatingPreference,
-      List<enums.CrewSettingsTravelMealPreferences>? mealPreferences,
+      List<CrewSettingsTravelPreferredAirlines>? preferredAirlines,
+      CrewSettingsTravelTravelSeatingPreference? travelSeatingPreference,
+      List<CrewSettingsTravelMealPreferences>? mealPreferences,
       List<Passport>? passportList}) {
     return CrewSettingsTravel(
         executive: executive ?? this.executive,
@@ -2935,7 +2935,7 @@ class CrewSettings {
   @JsonKey(name: 'date_of_birth', toJson: _dateToJson)
   final DateTime? dateOfBirth;
   @JsonKey(name: 'sms_crewing_status')
-  final enums.CrewSettingsSmsCrewingStatus? smsCrewingStatus;
+  final CrewSettingsSmsCrewingStatus? smsCrewingStatus;
   static const fromJsonFactory = _$CrewSettingsFromJson;
   static const toJsonFactory = _$CrewSettingsToJson;
   Map<String, dynamic> toJson() => _$CrewSettingsToJson(this);
@@ -2981,7 +2981,7 @@ extension $CrewSettingsExtension on CrewSettings {
       bool? disableSms,
       CrewSettingsTravel? travel,
       DateTime? dateOfBirth,
-      enums.CrewSettingsSmsCrewingStatus? smsCrewingStatus}) {
+      CrewSettingsSmsCrewingStatus? smsCrewingStatus}) {
     return CrewSettings(
         id: id ?? this.id,
         dbDateCreated: dbDateCreated ?? this.dbDateCreated,
@@ -3011,7 +3011,7 @@ class CrewProfileURL {
       name: 'type',
       toJson: crewProfileURLTypeToJson,
       fromJson: crewProfileURLTypeFromJson)
-  final enums.CrewProfileURLType? type;
+  final CrewProfileURLType? type;
   @JsonKey(name: 'url')
   final String? url;
   @JsonKey(name: 'db_date_created')
@@ -3041,7 +3041,7 @@ class CrewProfileURL {
 
 extension $CrewProfileURLExtension on CrewProfileURL {
   CrewProfileURL copyWith(
-      {enums.CrewProfileURLType? type,
+      {CrewProfileURLType? type,
       String? url,
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated}) {
@@ -3132,7 +3132,7 @@ class CrewNote {
       name: 'status',
       toJson: crewNoteStatusToJson,
       fromJson: crewNoteStatusFromJson)
-  final enums.CrewNoteStatus? status;
+  final CrewNoteStatus? status;
   @JsonKey(name: 'user')
   final User? user;
   static const fromJsonFactory = _$CrewNoteFromJson;
@@ -3177,7 +3177,7 @@ extension $CrewNoteExtension on CrewNote {
       DateTime? dateEntered,
       String? subject,
       String? body,
-      enums.CrewNoteStatus? status,
+      CrewNoteStatus? status,
       User? user}) {
     return CrewNote(
         id: id ?? this.id,
@@ -3389,7 +3389,7 @@ class Crew {
   final DateTime? dbDateUpdated;
   @JsonKey(
       name: 'status', toJson: crewStatusToJson, fromJson: crewStatusFromJson)
-  final enums.CrewStatus? status;
+  final CrewStatus? status;
   @JsonKey(name: 'first_name')
   final String? firstName;
   @JsonKey(name: 'last_name')
@@ -3408,7 +3408,7 @@ class Crew {
       name: 'classification',
       toJson: crewClassificationToJson,
       fromJson: crewClassificationFromJson)
-  final enums.CrewClassification? classification;
+  final CrewClassification? classification;
   @JsonKey(name: 'legal_first_name')
   final String? legalFirstName;
   @JsonKey(name: 'legal_last_name')
@@ -3420,13 +3420,13 @@ class Crew {
   @JsonKey(name: 'rate')
   final String? rate;
   @JsonKey(name: 'rate_type')
-  final enums.CrewRateType? rateType;
+  final CrewRateType? rateType;
   @JsonKey(name: 'rate_currency')
   final String? rateCurrency;
   @JsonKey(name: 'travel_rate')
   final String? travelRate;
   @JsonKey(name: 'travel_rate_source')
-  final enums.CrewTravelRateSource? travelRateSource;
+  final CrewTravelRateSource? travelRateSource;
   @JsonKey(name: 'overall_rating')
   final double? overallRating;
   @JsonKey(name: 'project_manager')
@@ -3438,7 +3438,7 @@ class Crew {
   @JsonKey(name: 'valid_passport')
   final bool? validPassport;
   @JsonKey(name: 'shirt_size')
-  final enums.CrewShirtSize? shirtSize;
+  final CrewShirtSize? shirtSize;
   @JsonKey(name: 'date_onboarded', toJson: _dateToJson)
   final DateTime? dateOnboarded;
   @JsonKey(name: 'note')
@@ -3564,7 +3564,7 @@ extension $CrewExtension on Crew {
       {int? id,
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated,
-      enums.CrewStatus? status,
+      CrewStatus? status,
       String? firstName,
       String? lastName,
       String? middleName,
@@ -3572,22 +3572,22 @@ extension $CrewExtension on Crew {
       String? phone,
       List<CrewAddress>? addresses,
       List<CrewContact>? contacts,
-      enums.CrewClassification? classification,
+      CrewClassification? classification,
       String? legalFirstName,
       String? legalLastName,
       String? usStateOfResidence,
       String? country,
       String? rate,
-      enums.CrewRateType? rateType,
+      CrewRateType? rateType,
       String? rateCurrency,
       String? travelRate,
-      enums.CrewTravelRateSource? travelRateSource,
+      CrewTravelRateSource? travelRateSource,
       double? overallRating,
       bool? projectManager,
       String? code,
       String? externalCode,
       bool? validPassport,
-      enums.CrewShirtSize? shirtSize,
+      CrewShirtSize? shirtSize,
       DateTime? dateOnboarded,
       String? note,
       List<CrewPosition>? positions,
@@ -3689,7 +3689,7 @@ class CrewRating {
       name: 'type',
       toJson: crewRatingTypeToJson,
       fromJson: crewRatingTypeFromJson)
-  final enums.CrewRatingType? type;
+  final CrewRatingType? type;
   @JsonKey(name: 'notes')
   final String? notes;
   static const fromJsonFactory = _$CrewRatingFromJson;
@@ -3746,7 +3746,7 @@ extension $CrewRatingExtension on CrewRating {
       User? userRated,
       DateTime? dateRated,
       DateTime? dateHidden,
-      enums.CrewRatingType? type,
+      CrewRatingType? type,
       String? notes}) {
     return CrewRating(
         id: id ?? this.id,
@@ -3790,7 +3790,7 @@ class CustomFieldResponse {
   @JsonKey(name: 'question')
   final int? question;
   @JsonKey(name: 'data_type')
-  final enums.CustomFieldResponseDataType? dataType;
+  final CustomFieldResponseDataType? dataType;
   @JsonKey(name: 'response_data')
   final String? responseData;
   static const fromJsonFactory = _$CustomFieldResponseFromJson;
@@ -3830,7 +3830,7 @@ extension $CustomFieldResponseExtension on CustomFieldResponse {
       DateTime? dbDateUpdated,
       int? crew,
       int? question,
-      enums.CustomFieldResponseDataType? dataType,
+      CustomFieldResponseDataType? dataType,
       String? responseData}) {
     return CustomFieldResponse(
         id: id ?? this.id,
@@ -3880,7 +3880,7 @@ class CustomField {
       name: 'status',
       toJson: customFieldStatusToJson,
       fromJson: customFieldStatusFromJson)
-  final enums.CustomFieldStatus? status;
+  final CustomFieldStatus? status;
   @JsonKey(name: 'term')
   final String? term;
   @JsonKey(name: 'label')
@@ -3888,12 +3888,12 @@ class CustomField {
   @JsonKey(name: 'description')
   final String? description;
   @JsonKey(name: 'data_type')
-  final enums.CustomFieldDataType? dataType;
+  final CustomFieldDataType? dataType;
   @JsonKey(
       name: 'registration',
       toJson: customFieldRegistrationToJson,
       fromJson: customFieldRegistrationFromJson)
-  final enums.CustomFieldRegistration? registration;
+  final CustomFieldRegistration? registration;
   @JsonKey(name: 'required_for_import')
   final bool? requiredForImport;
   @JsonKey(name: 'required_for_crewing')
@@ -3982,12 +3982,12 @@ extension $CustomFieldExtension on CustomField {
       {int? id,
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated,
-      enums.CustomFieldStatus? status,
+      CustomFieldStatus? status,
       String? term,
       String? label,
       String? description,
-      enums.CustomFieldDataType? dataType,
-      enums.CustomFieldRegistration? registration,
+      CustomFieldDataType? dataType,
+      CustomFieldRegistration? registration,
       bool? requiredForImport,
       bool? requiredForCrewing,
       bool? internal,
@@ -4047,7 +4047,7 @@ class Division {
       name: 'status',
       toJson: divisionStatusToJson,
       fromJson: divisionStatusFromJson)
-  final enums.DivisionStatus? status;
+  final DivisionStatus? status;
   @JsonKey(name: 'code')
   final String? code;
   @JsonKey(name: 'external_code')
@@ -4092,7 +4092,7 @@ extension $DivisionExtension on Division {
       {int? id,
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated,
-      enums.DivisionStatus? status,
+      DivisionStatus? status,
       String? code,
       String? externalCode,
       String? name,
@@ -4224,7 +4224,7 @@ class EventCollection {
       name: 'status',
       toJson: eventCollectionStatusToJson,
       fromJson: eventCollectionStatusFromJson)
-  final enums.EventCollectionStatus? status;
+  final EventCollectionStatus? status;
   @JsonKey(name: 'description')
   final String? description;
   @JsonKey(name: 'events', defaultValue: <int>[])
@@ -4287,7 +4287,7 @@ extension $EventCollectionExtension on EventCollection {
       String? name,
       DateTime? dateBegin,
       DateTime? dateEnd,
-      enums.EventCollectionStatus? status,
+      EventCollectionStatus? status,
       String? description,
       List<int>? events,
       int? client,
@@ -4435,7 +4435,7 @@ class EventNote {
       name: 'status',
       toJson: eventNoteStatusToJson,
       fromJson: eventNoteStatusFromJson)
-  final enums.EventNoteStatus? status;
+  final EventNoteStatus? status;
   static const fromJsonFactory = _$EventNoteFromJson;
   static const toJsonFactory = _$EventNoteToJson;
   Map<String, dynamic> toJson() => _$EventNoteToJson(this);
@@ -4476,7 +4476,7 @@ extension $EventNoteExtension on EventNote {
       DateTime? dateEntered,
       String? subject,
       String? body,
-      enums.EventNoteStatus? status}) {
+      EventNoteStatus? status}) {
     return EventNote(
         id: id ?? this.id,
         dbDateCreated: dbDateCreated ?? this.dbDateCreated,
@@ -4540,7 +4540,7 @@ class ScheduleEntry {
       name: 'type',
       toJson: scheduleEntryTypeToJson,
       fromJson: scheduleEntryTypeFromJson)
-  final enums.ScheduleEntryType? type;
+  final ScheduleEntryType? type;
   @JsonKey(name: 'utc_start')
   final DateTime? utcStart;
   @JsonKey(name: 'utc_end')
@@ -4631,7 +4631,7 @@ extension $ScheduleEntryExtension on ScheduleEntry {
       String? startTime,
       String? endTime,
       int? timezone,
-      enums.ScheduleEntryType? type,
+      ScheduleEntryType? type,
       DateTime? utcStart,
       DateTime? utcEnd,
       double? hoursDelta,
@@ -4716,21 +4716,21 @@ class EventPosition {
       name: 'status',
       toJson: eventPositionStatusToJson,
       fromJson: eventPositionStatusFromJson)
-  final enums.EventPositionStatus? status;
+  final EventPositionStatus? status;
   @JsonKey(name: 'sequence')
   final int? sequence;
   @JsonKey(name: 'rate_setting')
-  final enums.EventPositionRateSetting? rateSetting;
+  final EventPositionRateSetting? rateSetting;
   @JsonKey(name: 'rate')
   final String? rate;
   @JsonKey(name: 'rate_currency')
   final String? rateCurrency;
   @JsonKey(name: 'rate_type')
-  final enums.EventPositionRateType? rateType;
+  final EventPositionRateType? rateType;
   @JsonKey(name: 'billed_rate')
   final String? billedRate;
   @JsonKey(name: 'billed_rate_type')
-  final enums.EventPositionBilledRateType? billedRateType;
+  final EventPositionBilledRateType? billedRateType;
   @JsonKey(name: 'schedule_begin', toJson: _dateToJson)
   final DateTime? scheduleBegin;
   @JsonKey(name: 'schedule_end', toJson: _dateToJson)
@@ -4837,14 +4837,14 @@ extension $EventPositionExtension on EventPosition {
       int? position,
       int? quantity,
       String? label,
-      enums.EventPositionStatus? status,
+      EventPositionStatus? status,
       int? sequence,
-      enums.EventPositionRateSetting? rateSetting,
+      EventPositionRateSetting? rateSetting,
       String? rate,
       String? rateCurrency,
-      enums.EventPositionRateType? rateType,
+      EventPositionRateType? rateType,
       String? billedRate,
-      enums.EventPositionBilledRateType? billedRateType,
+      EventPositionBilledRateType? billedRateType,
       DateTime? scheduleBegin,
       DateTime? scheduleEnd,
       String? dayBegin,
@@ -4915,7 +4915,7 @@ class EventRole {
       name: 'role',
       toJson: eventRoleRoleToJson,
       fromJson: eventRoleRoleFromJson)
-  final enums.EventRoleRole? role;
+  final EventRoleRole? role;
   @JsonKey(name: 'crew')
   final int? crew;
   @JsonKey(name: 'is_primary')
@@ -4967,7 +4967,7 @@ extension $EventRoleExtension on EventRole {
       DateTime? dbDateUpdated,
       int? event,
       int? group,
-      enums.EventRoleRole? role,
+      EventRoleRole? role,
       int? crew,
       bool? isPrimary,
       DateTime? dateAdded,
@@ -5039,7 +5039,7 @@ class EventRosterPosition {
       name: 'status',
       toJson: eventRosterPositionStatusToJson,
       fromJson: eventRosterPositionStatusFromJson)
-  final enums.EventRosterPositionStatus? status;
+  final EventRosterPositionStatus? status;
   @JsonKey(name: 'date_confirmed')
   final DateTime? dateConfirmed;
   @JsonKey(name: 'date_approved')
@@ -5051,7 +5051,7 @@ class EventRosterPosition {
   @JsonKey(name: 'rate_currency')
   final String? rateCurrency;
   @JsonKey(name: 'rate_type')
-  final enums.EventRosterPositionRateType? rateType;
+  final EventRosterPositionRateType? rateType;
   @JsonKey(name: 'removal_reason')
   final int? removalReason;
   @JsonKey(name: 'total_labor')
@@ -5140,13 +5140,13 @@ extension $EventRosterPositionExtension on EventRosterPosition {
       int? crewPosition,
       User? userAdded,
       User? userApproved,
-      enums.EventRosterPositionStatus? status,
+      EventRosterPositionStatus? status,
       DateTime? dateConfirmed,
       DateTime? dateApproved,
       DateTime? dateAdded,
       String? rate,
       String? rateCurrency,
-      enums.EventRosterPositionRateType? rateType,
+      EventRosterPositionRateType? rateType,
       int? removalReason,
       String? totalLabor,
       String? totalOverhead,
@@ -5227,7 +5227,7 @@ class EventRosterPositionSerializerNoAnalytics {
       name: 'status',
       toJson: eventRosterPositionSerializerNoAnalyticsStatusToJson,
       fromJson: eventRosterPositionSerializerNoAnalyticsStatusFromJson)
-  final enums.EventRosterPositionSerializerNoAnalyticsStatus? status;
+  final EventRosterPositionSerializerNoAnalyticsStatus? status;
   @JsonKey(name: 'date_confirmed')
   final DateTime? dateConfirmed;
   @JsonKey(name: 'date_approved')
@@ -5239,7 +5239,7 @@ class EventRosterPositionSerializerNoAnalytics {
   @JsonKey(name: 'rate_currency')
   final String? rateCurrency;
   @JsonKey(name: 'rate_type')
-  final enums.EventRosterPositionSerializerNoAnalyticsRateType? rateType;
+  final EventRosterPositionSerializerNoAnalyticsRateType? rateType;
   @JsonKey(name: 'removal_reason')
   final int? removalReason;
   static const fromJsonFactory =
@@ -5316,13 +5316,13 @@ extension $EventRosterPositionSerializerNoAnalyticsExtension
       int? crewPosition,
       User? userAdded,
       User? userApproved,
-      enums.EventRosterPositionSerializerNoAnalyticsStatus? status,
+      EventRosterPositionSerializerNoAnalyticsStatus? status,
       DateTime? dateConfirmed,
       DateTime? dateApproved,
       DateTime? dateAdded,
       String? rate,
       String? rateCurrency,
-      enums.EventRosterPositionSerializerNoAnalyticsRateType? rateType,
+      EventRosterPositionSerializerNoAnalyticsRateType? rateType,
       int? removalReason}) {
     return EventRosterPositionSerializerNoAnalytics(
         id: id ?? this.id,
@@ -5457,9 +5457,9 @@ class Event {
   final String? name;
   @JsonKey(
       name: 'status', toJson: eventStatusToJson, fromJson: eventStatusFromJson)
-  final enums.EventStatus? status;
+  final EventStatus? status;
   @JsonKey(name: 'travel_booking_status')
-  final enums.EventTravelBookingStatus? travelBookingStatus;
+  final EventTravelBookingStatus? travelBookingStatus;
   @JsonKey(name: 'date_archived')
   final DateTime? dateArchived;
   @JsonKey(name: 'date_begin', toJson: _dateToJson)
@@ -5600,8 +5600,8 @@ extension $EventExtension on Event {
       String? code,
       String? externalCode,
       String? name,
-      enums.EventStatus? status,
-      enums.EventTravelBookingStatus? travelBookingStatus,
+      EventStatus? status,
+      EventTravelBookingStatus? travelBookingStatus,
       DateTime? dateArchived,
       DateTime? dateBegin,
       DateTime? dateEnd,
@@ -5713,21 +5713,21 @@ class Position {
       name: 'status',
       toJson: positionStatusToJson,
       fromJson: positionStatusFromJson)
-  final enums.PositionStatus? status;
+  final PositionStatus? status;
   @JsonKey(name: 'application_status')
-  final enums.PositionApplicationStatus? applicationStatus;
+  final PositionApplicationStatus? applicationStatus;
   @JsonKey(name: 'rate1')
   final String? rate1;
   @JsonKey(name: 'rate1_type')
-  final enums.PositionRate1Type? rate1Type;
+  final PositionRate1Type? rate1Type;
   @JsonKey(name: 'rate2')
   final String? rate2;
   @JsonKey(name: 'rate2_type')
-  final enums.PositionRate2Type? rate2Type;
+  final PositionRate2Type? rate2Type;
   @JsonKey(name: 'rate3')
   final String? rate3;
   @JsonKey(name: 'rate3_type')
-  final enums.PositionRate3Type? rate3Type;
+  final PositionRate3Type? rate3Type;
   static const fromJsonFactory = _$PositionFromJson;
   static const toJsonFactory = _$PositionToJson;
   Map<String, dynamic> toJson() => _$PositionToJson(this);
@@ -5807,14 +5807,14 @@ extension $PositionExtension on Position {
       int? approvedCount,
       int? pendingCount,
       String? classCode,
-      enums.PositionStatus? status,
-      enums.PositionApplicationStatus? applicationStatus,
+      PositionStatus? status,
+      PositionApplicationStatus? applicationStatus,
       String? rate1,
-      enums.PositionRate1Type? rate1Type,
+      PositionRate1Type? rate1Type,
       String? rate2,
-      enums.PositionRate2Type? rate2Type,
+      PositionRate2Type? rate2Type,
       String? rate3,
-      enums.PositionRate3Type? rate3Type}) {
+      PositionRate3Type? rate3Type}) {
     return Position(
         id: id ?? this.id,
         dbDateCreated: dbDateCreated ?? this.dbDateCreated,
@@ -5869,11 +5869,11 @@ class Tag {
   @JsonKey(name: 'description')
   final String? description;
   @JsonKey(name: 'color', toJson: tagColorToJson, fromJson: tagColorFromJson)
-  final enums.TagColor? color;
+  final TagColor? color;
   @JsonKey(name: 'important')
   final bool? important;
   @JsonKey(name: 'status', toJson: tagStatusToJson, fromJson: tagStatusFromJson)
-  final enums.TagStatus? status;
+  final TagStatus? status;
   @JsonKey(name: 'allowed_positions', defaultValue: <int>[])
   final List<int>? allowedPositions;
   static const fromJsonFactory = _$TagFromJson;
@@ -5921,9 +5921,9 @@ extension $TagExtension on Tag {
       String? category,
       String? name,
       String? description,
-      enums.TagColor? color,
+      TagColor? color,
       bool? important,
-      enums.TagStatus? status,
+      TagStatus? status,
       List<int>? allowedPositions}) {
     return Tag(
         id: id ?? this.id,
@@ -6007,11 +6007,11 @@ class Vendor {
       name: 'status',
       toJson: vendorStatusToJson,
       fromJson: vendorStatusFromJson)
-  final enums.VendorStatus? status;
+  final VendorStatus? status;
   @JsonKey(name: 'email')
   final String? email;
   @JsonKey(name: 'kind', toJson: vendorKindToJson, fromJson: vendorKindFromJson)
-  final enums.VendorKind? kind;
+  final VendorKind? kind;
   @JsonKey(name: 'us_state')
   final String? usState;
   static const fromJsonFactory = _$VendorFromJson;
@@ -6056,9 +6056,9 @@ extension $VendorExtension on Vendor {
       String? code,
       String? externalCode,
       String? name,
-      enums.VendorStatus? status,
+      VendorStatus? status,
       String? email,
-      enums.VendorKind? kind,
+      VendorKind? kind,
       String? usState}) {
     return Vendor(
         id: id ?? this.id,
@@ -6106,7 +6106,7 @@ class VenueContact {
       name: 'type',
       toJson: venueContactTypeToJson,
       fromJson: venueContactTypeFromJson)
-  final enums.VenueContactType? type;
+  final VenueContactType? type;
   @JsonKey(name: 'venue')
   final int? venue;
   @JsonKey(name: 'first_name')
@@ -6178,7 +6178,7 @@ extension $VenueContactExtension on VenueContact {
       {int? id,
       DateTime? dbDateCreated,
       DateTime? dbDateUpdated,
-      enums.VenueContactType? type,
+      VenueContactType? type,
       int? venue,
       String? firstName,
       String? lastName,
@@ -6244,7 +6244,7 @@ class VenueNote {
       name: 'status',
       toJson: venueNoteStatusToJson,
       fromJson: venueNoteStatusFromJson)
-  final enums.VenueNoteStatus? status;
+  final VenueNoteStatus? status;
   static const fromJsonFactory = _$VenueNoteFromJson;
   static const toJsonFactory = _$VenueNoteToJson;
   Map<String, dynamic> toJson() => _$VenueNoteToJson(this);
@@ -6288,7 +6288,7 @@ extension $VenueNoteExtension on VenueNote {
       DateTime? dateEntered,
       String? subject,
       String? body,
-      enums.VenueNoteStatus? status}) {
+      VenueNoteStatus? status}) {
     return VenueNote(
         id: id ?? this.id,
         dbDateCreated: dbDateCreated ?? this.dbDateCreated,
@@ -6413,7 +6413,7 @@ class Venue {
   final String? name;
   @JsonKey(
       name: 'status', toJson: venueStatusToJson, fromJson: venueStatusFromJson)
-  final enums.VenueStatus? status;
+  final VenueStatus? status;
   @JsonKey(name: 'rooms', defaultValue: <int>[])
   final List<int>? rooms;
   @JsonKey(name: 'notes', defaultValue: <int>[])
@@ -6510,7 +6510,7 @@ extension $VenueExtension on Venue {
       String? code,
       String? externalCode,
       String? name,
-      enums.VenueStatus? status,
+      VenueStatus? status,
       List<int>? rooms,
       List<int>? notes,
       List<int>? contacts,
@@ -7821,37 +7821,37 @@ extension $VenuesGet$ResponseExtension on VenuesGet$Response {
 }
 
 String? accountUserRoleRoleToJson(
-    enums.AccountUserRoleRole? accountUserRoleRole) {
-  return enums.$AccountUserRoleRoleMap[accountUserRoleRole];
+    AccountUserRoleRole? accountUserRoleRole) {
+  return $AccountUserRoleRoleMap[accountUserRoleRole];
 }
 
-enums.AccountUserRoleRole accountUserRoleRoleFromJson(
+AccountUserRoleRole accountUserRoleRoleFromJson(
     String? accountUserRoleRole) {
   if (accountUserRoleRole == null) {
-    return enums.AccountUserRoleRole.swaggerGeneratedUnknown;
+    return AccountUserRoleRole.swaggerGeneratedUnknown;
   }
 
-  return enums.$AccountUserRoleRoleMap.entries
+  return $AccountUserRoleRoleMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == accountUserRoleRole.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.AccountUserRoleRole.swaggerGeneratedUnknown, ''))
+              AccountUserRoleRole.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> accountUserRoleRoleListToJson(
-    List<enums.AccountUserRoleRole>? accountUserRoleRole) {
+    List<AccountUserRoleRole>? accountUserRoleRole) {
   if (accountUserRoleRole == null) {
     return [];
   }
 
   return accountUserRoleRole
-      .map((e) => enums.$AccountUserRoleRoleMap[e]!)
+      .map((e) => $AccountUserRoleRoleMap[e]!)
       .toList();
 }
 
-List<enums.AccountUserRoleRole> accountUserRoleRoleListFromJson(
+List<AccountUserRoleRole> accountUserRoleRoleListFromJson(
     List? accountUserRoleRole) {
   if (accountUserRoleRole == null) {
     return [];
@@ -7863,38 +7863,38 @@ List<enums.AccountUserRoleRole> accountUserRoleRoleListFromJson(
 }
 
 String? accountUserRoleStatusToJson(
-    enums.AccountUserRoleStatus? accountUserRoleStatus) {
-  return enums.$AccountUserRoleStatusMap[accountUserRoleStatus];
+    AccountUserRoleStatus? accountUserRoleStatus) {
+  return $AccountUserRoleStatusMap[accountUserRoleStatus];
 }
 
-enums.AccountUserRoleStatus accountUserRoleStatusFromJson(
+AccountUserRoleStatus accountUserRoleStatusFromJson(
     String? accountUserRoleStatus) {
   if (accountUserRoleStatus == null) {
-    return enums.AccountUserRoleStatus.swaggerGeneratedUnknown;
+    return AccountUserRoleStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$AccountUserRoleStatusMap.entries
+  return $AccountUserRoleStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               accountUserRoleStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.AccountUserRoleStatus.swaggerGeneratedUnknown, ''))
+              AccountUserRoleStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> accountUserRoleStatusListToJson(
-    List<enums.AccountUserRoleStatus>? accountUserRoleStatus) {
+    List<AccountUserRoleStatus>? accountUserRoleStatus) {
   if (accountUserRoleStatus == null) {
     return [];
   }
 
   return accountUserRoleStatus
-      .map((e) => enums.$AccountUserRoleStatusMap[e]!)
+      .map((e) => $AccountUserRoleStatusMap[e]!)
       .toList();
 }
 
-List<enums.AccountUserRoleStatus> accountUserRoleStatusListFromJson(
+List<AccountUserRoleStatus> accountUserRoleStatusListFromJson(
     List? accountUserRoleStatus) {
   if (accountUserRoleStatus == null) {
     return [];
@@ -7906,37 +7906,37 @@ List<enums.AccountUserRoleStatus> accountUserRoleStatusListFromJson(
 }
 
 String? clientAddressStatusToJson(
-    enums.ClientAddressStatus? clientAddressStatus) {
-  return enums.$ClientAddressStatusMap[clientAddressStatus];
+    ClientAddressStatus? clientAddressStatus) {
+  return $ClientAddressStatusMap[clientAddressStatus];
 }
 
-enums.ClientAddressStatus clientAddressStatusFromJson(
+ClientAddressStatus clientAddressStatusFromJson(
     String? clientAddressStatus) {
   if (clientAddressStatus == null) {
-    return enums.ClientAddressStatus.swaggerGeneratedUnknown;
+    return ClientAddressStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$ClientAddressStatusMap.entries
+  return $ClientAddressStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == clientAddressStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.ClientAddressStatus.swaggerGeneratedUnknown, ''))
+              ClientAddressStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> clientAddressStatusListToJson(
-    List<enums.ClientAddressStatus>? clientAddressStatus) {
+    List<ClientAddressStatus>? clientAddressStatus) {
   if (clientAddressStatus == null) {
     return [];
   }
 
   return clientAddressStatus
-      .map((e) => enums.$ClientAddressStatusMap[e]!)
+      .map((e) => $ClientAddressStatusMap[e]!)
       .toList();
 }
 
-List<enums.ClientAddressStatus> clientAddressStatusListFromJson(
+List<ClientAddressStatus> clientAddressStatusListFromJson(
     List? clientAddressStatus) {
   if (clientAddressStatus == null) {
     return [];
@@ -7947,34 +7947,34 @@ List<enums.ClientAddressStatus> clientAddressStatusListFromJson(
       .toList();
 }
 
-String? clientAddressTypeToJson(enums.ClientAddressType? clientAddressType) {
-  return enums.$ClientAddressTypeMap[clientAddressType];
+String? clientAddressTypeToJson(ClientAddressType? clientAddressType) {
+  return $ClientAddressTypeMap[clientAddressType];
 }
 
-enums.ClientAddressType clientAddressTypeFromJson(String? clientAddressType) {
+ClientAddressType clientAddressTypeFromJson(String? clientAddressType) {
   if (clientAddressType == null) {
-    return enums.ClientAddressType.swaggerGeneratedUnknown;
+    return ClientAddressType.swaggerGeneratedUnknown;
   }
 
-  return enums.$ClientAddressTypeMap.entries
+  return $ClientAddressTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == clientAddressType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.ClientAddressType.swaggerGeneratedUnknown, ''))
+              ClientAddressType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> clientAddressTypeListToJson(
-    List<enums.ClientAddressType>? clientAddressType) {
+    List<ClientAddressType>? clientAddressType) {
   if (clientAddressType == null) {
     return [];
   }
 
-  return clientAddressType.map((e) => enums.$ClientAddressTypeMap[e]!).toList();
+  return clientAddressType.map((e) => $ClientAddressTypeMap[e]!).toList();
 }
 
-List<enums.ClientAddressType> clientAddressTypeListFromJson(
+List<ClientAddressType> clientAddressTypeListFromJson(
     List? clientAddressType) {
   if (clientAddressType == null) {
     return [];
@@ -7985,34 +7985,34 @@ List<enums.ClientAddressType> clientAddressTypeListFromJson(
       .toList();
 }
 
-String? clientContactTypeToJson(enums.ClientContactType? clientContactType) {
-  return enums.$ClientContactTypeMap[clientContactType];
+String? clientContactTypeToJson(ClientContactType? clientContactType) {
+  return $ClientContactTypeMap[clientContactType];
 }
 
-enums.ClientContactType clientContactTypeFromJson(String? clientContactType) {
+ClientContactType clientContactTypeFromJson(String? clientContactType) {
   if (clientContactType == null) {
-    return enums.ClientContactType.swaggerGeneratedUnknown;
+    return ClientContactType.swaggerGeneratedUnknown;
   }
 
-  return enums.$ClientContactTypeMap.entries
+  return $ClientContactTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == clientContactType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.ClientContactType.swaggerGeneratedUnknown, ''))
+              ClientContactType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> clientContactTypeListToJson(
-    List<enums.ClientContactType>? clientContactType) {
+    List<ClientContactType>? clientContactType) {
   if (clientContactType == null) {
     return [];
   }
 
-  return clientContactType.map((e) => enums.$ClientContactTypeMap[e]!).toList();
+  return clientContactType.map((e) => $ClientContactTypeMap[e]!).toList();
 }
 
-List<enums.ClientContactType> clientContactTypeListFromJson(
+List<ClientContactType> clientContactTypeListFromJson(
     List? clientContactType) {
   if (clientContactType == null) {
     return [];
@@ -8023,33 +8023,33 @@ List<enums.ClientContactType> clientContactTypeListFromJson(
       .toList();
 }
 
-String? clientStatusToJson(enums.ClientStatus? clientStatus) {
-  return enums.$ClientStatusMap[clientStatus];
+String? clientStatusToJson(ClientStatus? clientStatus) {
+  return $ClientStatusMap[clientStatus];
 }
 
-enums.ClientStatus clientStatusFromJson(String? clientStatus) {
+ClientStatus clientStatusFromJson(String? clientStatus) {
   if (clientStatus == null) {
-    return enums.ClientStatus.swaggerGeneratedUnknown;
+    return ClientStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$ClientStatusMap.entries
+  return $ClientStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == clientStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.ClientStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(ClientStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> clientStatusListToJson(List<enums.ClientStatus>? clientStatus) {
+List<String> clientStatusListToJson(List<ClientStatus>? clientStatus) {
   if (clientStatus == null) {
     return [];
   }
 
-  return clientStatus.map((e) => enums.$ClientStatusMap[e]!).toList();
+  return clientStatus.map((e) => $ClientStatusMap[e]!).toList();
 }
 
-List<enums.ClientStatus> clientStatusListFromJson(List? clientStatus) {
+List<ClientStatus> clientStatusListFromJson(List? clientStatus) {
   if (clientStatus == null) {
     return [];
   }
@@ -8057,34 +8057,34 @@ List<enums.ClientStatus> clientStatusListFromJson(List? clientStatus) {
   return clientStatus.map((e) => clientStatusFromJson(e.toString())).toList();
 }
 
-String? crewAddressStatusToJson(enums.CrewAddressStatus? crewAddressStatus) {
-  return enums.$CrewAddressStatusMap[crewAddressStatus];
+String? crewAddressStatusToJson(CrewAddressStatus? crewAddressStatus) {
+  return $CrewAddressStatusMap[crewAddressStatus];
 }
 
-enums.CrewAddressStatus crewAddressStatusFromJson(String? crewAddressStatus) {
+CrewAddressStatus crewAddressStatusFromJson(String? crewAddressStatus) {
   if (crewAddressStatus == null) {
-    return enums.CrewAddressStatus.swaggerGeneratedUnknown;
+    return CrewAddressStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewAddressStatusMap.entries
+  return $CrewAddressStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewAddressStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewAddressStatus.swaggerGeneratedUnknown, ''))
+              CrewAddressStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewAddressStatusListToJson(
-    List<enums.CrewAddressStatus>? crewAddressStatus) {
+    List<CrewAddressStatus>? crewAddressStatus) {
   if (crewAddressStatus == null) {
     return [];
   }
 
-  return crewAddressStatus.map((e) => enums.$CrewAddressStatusMap[e]!).toList();
+  return crewAddressStatus.map((e) => $CrewAddressStatusMap[e]!).toList();
 }
 
-List<enums.CrewAddressStatus> crewAddressStatusListFromJson(
+List<CrewAddressStatus> crewAddressStatusListFromJson(
     List? crewAddressStatus) {
   if (crewAddressStatus == null) {
     return [];
@@ -8095,34 +8095,34 @@ List<enums.CrewAddressStatus> crewAddressStatusListFromJson(
       .toList();
 }
 
-String? crewContactTypeToJson(enums.CrewContactType? crewContactType) {
-  return enums.$CrewContactTypeMap[crewContactType];
+String? crewContactTypeToJson(CrewContactType? crewContactType) {
+  return $CrewContactTypeMap[crewContactType];
 }
 
-enums.CrewContactType crewContactTypeFromJson(String? crewContactType) {
+CrewContactType crewContactTypeFromJson(String? crewContactType) {
   if (crewContactType == null) {
-    return enums.CrewContactType.swaggerGeneratedUnknown;
+    return CrewContactType.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewContactTypeMap.entries
+  return $CrewContactTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewContactType.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.CrewContactType.swaggerGeneratedUnknown, ''))
+              const MapEntry(CrewContactType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewContactTypeListToJson(
-    List<enums.CrewContactType>? crewContactType) {
+    List<CrewContactType>? crewContactType) {
   if (crewContactType == null) {
     return [];
   }
 
-  return crewContactType.map((e) => enums.$CrewContactTypeMap[e]!).toList();
+  return crewContactType.map((e) => $CrewContactTypeMap[e]!).toList();
 }
 
-List<enums.CrewContactType> crewContactTypeListFromJson(List? crewContactType) {
+List<CrewContactType> crewContactTypeListFromJson(List? crewContactType) {
   if (crewContactType == null) {
     return [];
   }
@@ -8132,37 +8132,37 @@ List<enums.CrewContactType> crewContactTypeListFromJson(List? crewContactType) {
       .toList();
 }
 
-String? crewPositionStatusToJson(enums.CrewPositionStatus? crewPositionStatus) {
-  return enums.$CrewPositionStatusMap[crewPositionStatus];
+String? crewPositionStatusToJson(CrewPositionStatus? crewPositionStatus) {
+  return $CrewPositionStatusMap[crewPositionStatus];
 }
 
-enums.CrewPositionStatus crewPositionStatusFromJson(
+CrewPositionStatus crewPositionStatusFromJson(
     String? crewPositionStatus) {
   if (crewPositionStatus == null) {
-    return enums.CrewPositionStatus.swaggerGeneratedUnknown;
+    return CrewPositionStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewPositionStatusMap.entries
+  return $CrewPositionStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewPositionStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewPositionStatus.swaggerGeneratedUnknown, ''))
+              CrewPositionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewPositionStatusListToJson(
-    List<enums.CrewPositionStatus>? crewPositionStatus) {
+    List<CrewPositionStatus>? crewPositionStatus) {
   if (crewPositionStatus == null) {
     return [];
   }
 
   return crewPositionStatus
-      .map((e) => enums.$CrewPositionStatusMap[e]!)
+      .map((e) => $CrewPositionStatusMap[e]!)
       .toList();
 }
 
-List<enums.CrewPositionStatus> crewPositionStatusListFromJson(
+List<CrewPositionStatus> crewPositionStatusListFromJson(
     List? crewPositionStatus) {
   if (crewPositionStatus == null) {
     return [];
@@ -8174,37 +8174,37 @@ List<enums.CrewPositionStatus> crewPositionStatusListFromJson(
 }
 
 String? crewPositionRateTypeToJson(
-    enums.CrewPositionRateType? crewPositionRateType) {
-  return enums.$CrewPositionRateTypeMap[crewPositionRateType];
+    CrewPositionRateType? crewPositionRateType) {
+  return $CrewPositionRateTypeMap[crewPositionRateType];
 }
 
-enums.CrewPositionRateType crewPositionRateTypeFromJson(
+CrewPositionRateType crewPositionRateTypeFromJson(
     String? crewPositionRateType) {
   if (crewPositionRateType == null) {
-    return enums.CrewPositionRateType.swaggerGeneratedUnknown;
+    return CrewPositionRateType.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewPositionRateTypeMap.entries
+  return $CrewPositionRateTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewPositionRateType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewPositionRateType.swaggerGeneratedUnknown, ''))
+              CrewPositionRateType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewPositionRateTypeListToJson(
-    List<enums.CrewPositionRateType>? crewPositionRateType) {
+    List<CrewPositionRateType>? crewPositionRateType) {
   if (crewPositionRateType == null) {
     return [];
   }
 
   return crewPositionRateType
-      .map((e) => enums.$CrewPositionRateTypeMap[e]!)
+      .map((e) => $CrewPositionRateTypeMap[e]!)
       .toList();
 }
 
-List<enums.CrewPositionRateType> crewPositionRateTypeListFromJson(
+List<CrewPositionRateType> crewPositionRateTypeListFromJson(
     List? crewPositionRateType) {
   if (crewPositionRateType == null) {
     return [];
@@ -8216,38 +8216,38 @@ List<enums.CrewPositionRateType> crewPositionRateTypeListFromJson(
 }
 
 String? crewPositionRateSourceToJson(
-    enums.CrewPositionRateSource? crewPositionRateSource) {
-  return enums.$CrewPositionRateSourceMap[crewPositionRateSource];
+    CrewPositionRateSource? crewPositionRateSource) {
+  return $CrewPositionRateSourceMap[crewPositionRateSource];
 }
 
-enums.CrewPositionRateSource crewPositionRateSourceFromJson(
+CrewPositionRateSource crewPositionRateSourceFromJson(
     String? crewPositionRateSource) {
   if (crewPositionRateSource == null) {
-    return enums.CrewPositionRateSource.swaggerGeneratedUnknown;
+    return CrewPositionRateSource.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewPositionRateSourceMap.entries
+  return $CrewPositionRateSourceMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               crewPositionRateSource.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewPositionRateSource.swaggerGeneratedUnknown, ''))
+              CrewPositionRateSource.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewPositionRateSourceListToJson(
-    List<enums.CrewPositionRateSource>? crewPositionRateSource) {
+    List<CrewPositionRateSource>? crewPositionRateSource) {
   if (crewPositionRateSource == null) {
     return [];
   }
 
   return crewPositionRateSource
-      .map((e) => enums.$CrewPositionRateSourceMap[e]!)
+      .map((e) => $CrewPositionRateSourceMap[e]!)
       .toList();
 }
 
-List<enums.CrewPositionRateSource> crewPositionRateSourceListFromJson(
+List<CrewPositionRateSource> crewPositionRateSourceListFromJson(
     List? crewPositionRateSource) {
   if (crewPositionRateSource == null) {
     return [];
@@ -8259,38 +8259,38 @@ List<enums.CrewPositionRateSource> crewPositionRateSourceListFromJson(
 }
 
 String? crewSettingsTravelGenderToJson(
-    enums.CrewSettingsTravelGender? crewSettingsTravelGender) {
-  return enums.$CrewSettingsTravelGenderMap[crewSettingsTravelGender];
+    CrewSettingsTravelGender? crewSettingsTravelGender) {
+  return $CrewSettingsTravelGenderMap[crewSettingsTravelGender];
 }
 
-enums.CrewSettingsTravelGender crewSettingsTravelGenderFromJson(
+CrewSettingsTravelGender crewSettingsTravelGenderFromJson(
     String? crewSettingsTravelGender) {
   if (crewSettingsTravelGender == null) {
-    return enums.CrewSettingsTravelGender.swaggerGeneratedUnknown;
+    return CrewSettingsTravelGender.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewSettingsTravelGenderMap.entries
+  return $CrewSettingsTravelGenderMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               crewSettingsTravelGender.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewSettingsTravelGender.swaggerGeneratedUnknown, ''))
+              CrewSettingsTravelGender.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewSettingsTravelGenderListToJson(
-    List<enums.CrewSettingsTravelGender>? crewSettingsTravelGender) {
+    List<CrewSettingsTravelGender>? crewSettingsTravelGender) {
   if (crewSettingsTravelGender == null) {
     return [];
   }
 
   return crewSettingsTravelGender
-      .map((e) => enums.$CrewSettingsTravelGenderMap[e]!)
+      .map((e) => $CrewSettingsTravelGenderMap[e]!)
       .toList();
 }
 
-List<enums.CrewSettingsTravelGender> crewSettingsTravelGenderListFromJson(
+List<CrewSettingsTravelGender> crewSettingsTravelGenderListFromJson(
     List? crewSettingsTravelGender) {
   if (crewSettingsTravelGender == null) {
     return [];
@@ -8302,43 +8302,43 @@ List<enums.CrewSettingsTravelGender> crewSettingsTravelGenderListFromJson(
 }
 
 String? crewSettingsTravelPreferredAirlinesToJson(
-    enums.CrewSettingsTravelPreferredAirlines?
+    CrewSettingsTravelPreferredAirlines?
         crewSettingsTravelPreferredAirlines) {
-  return enums.$CrewSettingsTravelPreferredAirlinesMap[
+  return $CrewSettingsTravelPreferredAirlinesMap[
       crewSettingsTravelPreferredAirlines];
 }
 
-enums.CrewSettingsTravelPreferredAirlines
+CrewSettingsTravelPreferredAirlines
     crewSettingsTravelPreferredAirlinesFromJson(
         String? crewSettingsTravelPreferredAirlines) {
   if (crewSettingsTravelPreferredAirlines == null) {
-    return enums.CrewSettingsTravelPreferredAirlines.swaggerGeneratedUnknown;
+    return CrewSettingsTravelPreferredAirlines.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewSettingsTravelPreferredAirlinesMap.entries
+  return $CrewSettingsTravelPreferredAirlinesMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               crewSettingsTravelPreferredAirlines.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewSettingsTravelPreferredAirlines.swaggerGeneratedUnknown,
+              CrewSettingsTravelPreferredAirlines.swaggerGeneratedUnknown,
               ''))
       .key;
 }
 
 List<String> crewSettingsTravelPreferredAirlinesListToJson(
-    List<enums.CrewSettingsTravelPreferredAirlines>?
+    List<CrewSettingsTravelPreferredAirlines>?
         crewSettingsTravelPreferredAirlines) {
   if (crewSettingsTravelPreferredAirlines == null) {
     return [];
   }
 
   return crewSettingsTravelPreferredAirlines
-      .map((e) => enums.$CrewSettingsTravelPreferredAirlinesMap[e]!)
+      .map((e) => $CrewSettingsTravelPreferredAirlinesMap[e]!)
       .toList();
 }
 
-List<enums.CrewSettingsTravelPreferredAirlines>
+List<CrewSettingsTravelPreferredAirlines>
     crewSettingsTravelPreferredAirlinesListFromJson(
         List? crewSettingsTravelPreferredAirlines) {
   if (crewSettingsTravelPreferredAirlines == null) {
@@ -8351,45 +8351,44 @@ List<enums.CrewSettingsTravelPreferredAirlines>
 }
 
 String? crewSettingsTravelTravelSeatingPreferenceToJson(
-    enums.CrewSettingsTravelTravelSeatingPreference?
+    CrewSettingsTravelTravelSeatingPreference?
         crewSettingsTravelTravelSeatingPreference) {
-  return enums.$CrewSettingsTravelTravelSeatingPreferenceMap[
+  return $CrewSettingsTravelTravelSeatingPreferenceMap[
       crewSettingsTravelTravelSeatingPreference];
 }
 
-enums.CrewSettingsTravelTravelSeatingPreference
+CrewSettingsTravelTravelSeatingPreference
     crewSettingsTravelTravelSeatingPreferenceFromJson(
         String? crewSettingsTravelTravelSeatingPreference) {
   if (crewSettingsTravelTravelSeatingPreference == null) {
-    return enums
-        .CrewSettingsTravelTravelSeatingPreference.swaggerGeneratedUnknown;
+    return CrewSettingsTravelTravelSeatingPreference.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewSettingsTravelTravelSeatingPreferenceMap.entries
+  return $CrewSettingsTravelTravelSeatingPreferenceMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               crewSettingsTravelTravelSeatingPreference.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewSettingsTravelTravelSeatingPreference
+              CrewSettingsTravelTravelSeatingPreference
                   .swaggerGeneratedUnknown,
               ''))
       .key;
 }
 
 List<String> crewSettingsTravelTravelSeatingPreferenceListToJson(
-    List<enums.CrewSettingsTravelTravelSeatingPreference>?
+    List<CrewSettingsTravelTravelSeatingPreference>?
         crewSettingsTravelTravelSeatingPreference) {
   if (crewSettingsTravelTravelSeatingPreference == null) {
     return [];
   }
 
   return crewSettingsTravelTravelSeatingPreference
-      .map((e) => enums.$CrewSettingsTravelTravelSeatingPreferenceMap[e]!)
+      .map((e) => $CrewSettingsTravelTravelSeatingPreferenceMap[e]!)
       .toList();
 }
 
-List<enums.CrewSettingsTravelTravelSeatingPreference>
+List<CrewSettingsTravelTravelSeatingPreference>
     crewSettingsTravelTravelSeatingPreferenceListFromJson(
         List? crewSettingsTravelTravelSeatingPreference) {
   if (crewSettingsTravelTravelSeatingPreference == null) {
@@ -8403,43 +8402,42 @@ List<enums.CrewSettingsTravelTravelSeatingPreference>
 }
 
 String? crewSettingsTravelMealPreferencesToJson(
-    enums.CrewSettingsTravelMealPreferences?
+    CrewSettingsTravelMealPreferences?
         crewSettingsTravelMealPreferences) {
-  return enums
-      .$CrewSettingsTravelMealPreferencesMap[crewSettingsTravelMealPreferences];
+  return $CrewSettingsTravelMealPreferencesMap[crewSettingsTravelMealPreferences];
 }
 
-enums.CrewSettingsTravelMealPreferences
+CrewSettingsTravelMealPreferences
     crewSettingsTravelMealPreferencesFromJson(
         String? crewSettingsTravelMealPreferences) {
   if (crewSettingsTravelMealPreferences == null) {
-    return enums.CrewSettingsTravelMealPreferences.swaggerGeneratedUnknown;
+    return CrewSettingsTravelMealPreferences.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewSettingsTravelMealPreferencesMap.entries
+  return $CrewSettingsTravelMealPreferencesMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               crewSettingsTravelMealPreferences.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewSettingsTravelMealPreferences.swaggerGeneratedUnknown,
+              CrewSettingsTravelMealPreferences.swaggerGeneratedUnknown,
               ''))
       .key;
 }
 
 List<String> crewSettingsTravelMealPreferencesListToJson(
-    List<enums.CrewSettingsTravelMealPreferences>?
+    List<CrewSettingsTravelMealPreferences>?
         crewSettingsTravelMealPreferences) {
   if (crewSettingsTravelMealPreferences == null) {
     return [];
   }
 
   return crewSettingsTravelMealPreferences
-      .map((e) => enums.$CrewSettingsTravelMealPreferencesMap[e]!)
+      .map((e) => $CrewSettingsTravelMealPreferencesMap[e]!)
       .toList();
 }
 
-List<enums.CrewSettingsTravelMealPreferences>
+List<CrewSettingsTravelMealPreferences>
     crewSettingsTravelMealPreferencesListFromJson(
         List? crewSettingsTravelMealPreferences) {
   if (crewSettingsTravelMealPreferences == null) {
@@ -8452,38 +8450,38 @@ List<enums.CrewSettingsTravelMealPreferences>
 }
 
 String? crewSettingsSmsCrewingStatusToJson(
-    enums.CrewSettingsSmsCrewingStatus? crewSettingsSmsCrewingStatus) {
-  return enums.$CrewSettingsSmsCrewingStatusMap[crewSettingsSmsCrewingStatus];
+    CrewSettingsSmsCrewingStatus? crewSettingsSmsCrewingStatus) {
+  return $CrewSettingsSmsCrewingStatusMap[crewSettingsSmsCrewingStatus];
 }
 
-enums.CrewSettingsSmsCrewingStatus crewSettingsSmsCrewingStatusFromJson(
+CrewSettingsSmsCrewingStatus crewSettingsSmsCrewingStatusFromJson(
     String? crewSettingsSmsCrewingStatus) {
   if (crewSettingsSmsCrewingStatus == null) {
-    return enums.CrewSettingsSmsCrewingStatus.swaggerGeneratedUnknown;
+    return CrewSettingsSmsCrewingStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewSettingsSmsCrewingStatusMap.entries
+  return $CrewSettingsSmsCrewingStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               crewSettingsSmsCrewingStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewSettingsSmsCrewingStatus.swaggerGeneratedUnknown, ''))
+              CrewSettingsSmsCrewingStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewSettingsSmsCrewingStatusListToJson(
-    List<enums.CrewSettingsSmsCrewingStatus>? crewSettingsSmsCrewingStatus) {
+    List<CrewSettingsSmsCrewingStatus>? crewSettingsSmsCrewingStatus) {
   if (crewSettingsSmsCrewingStatus == null) {
     return [];
   }
 
   return crewSettingsSmsCrewingStatus
-      .map((e) => enums.$CrewSettingsSmsCrewingStatusMap[e]!)
+      .map((e) => $CrewSettingsSmsCrewingStatusMap[e]!)
       .toList();
 }
 
-List<enums.CrewSettingsSmsCrewingStatus>
+List<CrewSettingsSmsCrewingStatus>
     crewSettingsSmsCrewingStatusListFromJson(
         List? crewSettingsSmsCrewingStatus) {
   if (crewSettingsSmsCrewingStatus == null) {
@@ -8495,37 +8493,37 @@ List<enums.CrewSettingsSmsCrewingStatus>
       .toList();
 }
 
-String? crewProfileURLTypeToJson(enums.CrewProfileURLType? crewProfileURLType) {
-  return enums.$CrewProfileURLTypeMap[crewProfileURLType];
+String? crewProfileURLTypeToJson(CrewProfileURLType? crewProfileURLType) {
+  return $CrewProfileURLTypeMap[crewProfileURLType];
 }
 
-enums.CrewProfileURLType crewProfileURLTypeFromJson(
+CrewProfileURLType crewProfileURLTypeFromJson(
     String? crewProfileURLType) {
   if (crewProfileURLType == null) {
-    return enums.CrewProfileURLType.swaggerGeneratedUnknown;
+    return CrewProfileURLType.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewProfileURLTypeMap.entries
+  return $CrewProfileURLTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewProfileURLType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewProfileURLType.swaggerGeneratedUnknown, ''))
+              CrewProfileURLType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewProfileURLTypeListToJson(
-    List<enums.CrewProfileURLType>? crewProfileURLType) {
+    List<CrewProfileURLType>? crewProfileURLType) {
   if (crewProfileURLType == null) {
     return [];
   }
 
   return crewProfileURLType
-      .map((e) => enums.$CrewProfileURLTypeMap[e]!)
+      .map((e) => $CrewProfileURLTypeMap[e]!)
       .toList();
 }
 
-List<enums.CrewProfileURLType> crewProfileURLTypeListFromJson(
+List<CrewProfileURLType> crewProfileURLTypeListFromJson(
     List? crewProfileURLType) {
   if (crewProfileURLType == null) {
     return [];
@@ -8536,34 +8534,34 @@ List<enums.CrewProfileURLType> crewProfileURLTypeListFromJson(
       .toList();
 }
 
-String? crewNoteStatusToJson(enums.CrewNoteStatus? crewNoteStatus) {
-  return enums.$CrewNoteStatusMap[crewNoteStatus];
+String? crewNoteStatusToJson(CrewNoteStatus? crewNoteStatus) {
+  return $CrewNoteStatusMap[crewNoteStatus];
 }
 
-enums.CrewNoteStatus crewNoteStatusFromJson(String? crewNoteStatus) {
+CrewNoteStatus crewNoteStatusFromJson(String? crewNoteStatus) {
   if (crewNoteStatus == null) {
-    return enums.CrewNoteStatus.swaggerGeneratedUnknown;
+    return CrewNoteStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewNoteStatusMap.entries
+  return $CrewNoteStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewNoteStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.CrewNoteStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(CrewNoteStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewNoteStatusListToJson(
-    List<enums.CrewNoteStatus>? crewNoteStatus) {
+    List<CrewNoteStatus>? crewNoteStatus) {
   if (crewNoteStatus == null) {
     return [];
   }
 
-  return crewNoteStatus.map((e) => enums.$CrewNoteStatusMap[e]!).toList();
+  return crewNoteStatus.map((e) => $CrewNoteStatusMap[e]!).toList();
 }
 
-List<enums.CrewNoteStatus> crewNoteStatusListFromJson(List? crewNoteStatus) {
+List<CrewNoteStatus> crewNoteStatusListFromJson(List? crewNoteStatus) {
   if (crewNoteStatus == null) {
     return [];
   }
@@ -8573,32 +8571,32 @@ List<enums.CrewNoteStatus> crewNoteStatusListFromJson(List? crewNoteStatus) {
       .toList();
 }
 
-String? crewStatusToJson(enums.CrewStatus? crewStatus) {
-  return enums.$CrewStatusMap[crewStatus];
+String? crewStatusToJson(CrewStatus? crewStatus) {
+  return $CrewStatusMap[crewStatus];
 }
 
-enums.CrewStatus crewStatusFromJson(String? crewStatus) {
+CrewStatus crewStatusFromJson(String? crewStatus) {
   if (crewStatus == null) {
-    return enums.CrewStatus.swaggerGeneratedUnknown;
+    return CrewStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewStatusMap.entries
+  return $CrewStatusMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == crewStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.CrewStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(CrewStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> crewStatusListToJson(List<enums.CrewStatus>? crewStatus) {
+List<String> crewStatusListToJson(List<CrewStatus>? crewStatus) {
   if (crewStatus == null) {
     return [];
   }
 
-  return crewStatus.map((e) => enums.$CrewStatusMap[e]!).toList();
+  return crewStatus.map((e) => $CrewStatusMap[e]!).toList();
 }
 
-List<enums.CrewStatus> crewStatusListFromJson(List? crewStatus) {
+List<CrewStatus> crewStatusListFromJson(List? crewStatus) {
   if (crewStatus == null) {
     return [];
   }
@@ -8606,37 +8604,37 @@ List<enums.CrewStatus> crewStatusListFromJson(List? crewStatus) {
   return crewStatus.map((e) => crewStatusFromJson(e.toString())).toList();
 }
 
-String? crewClassificationToJson(enums.CrewClassification? crewClassification) {
-  return enums.$CrewClassificationMap[crewClassification];
+String? crewClassificationToJson(CrewClassification? crewClassification) {
+  return $CrewClassificationMap[crewClassification];
 }
 
-enums.CrewClassification crewClassificationFromJson(
+CrewClassification crewClassificationFromJson(
     String? crewClassification) {
   if (crewClassification == null) {
-    return enums.CrewClassification.swaggerGeneratedUnknown;
+    return CrewClassification.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewClassificationMap.entries
+  return $CrewClassificationMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewClassification.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewClassification.swaggerGeneratedUnknown, ''))
+              CrewClassification.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewClassificationListToJson(
-    List<enums.CrewClassification>? crewClassification) {
+    List<CrewClassification>? crewClassification) {
   if (crewClassification == null) {
     return [];
   }
 
   return crewClassification
-      .map((e) => enums.$CrewClassificationMap[e]!)
+      .map((e) => $CrewClassificationMap[e]!)
       .toList();
 }
 
-List<enums.CrewClassification> crewClassificationListFromJson(
+List<CrewClassification> crewClassificationListFromJson(
     List? crewClassification) {
   if (crewClassification == null) {
     return [];
@@ -8647,33 +8645,33 @@ List<enums.CrewClassification> crewClassificationListFromJson(
       .toList();
 }
 
-String? crewRateTypeToJson(enums.CrewRateType? crewRateType) {
-  return enums.$CrewRateTypeMap[crewRateType];
+String? crewRateTypeToJson(CrewRateType? crewRateType) {
+  return $CrewRateTypeMap[crewRateType];
 }
 
-enums.CrewRateType crewRateTypeFromJson(String? crewRateType) {
+CrewRateType crewRateTypeFromJson(String? crewRateType) {
   if (crewRateType == null) {
-    return enums.CrewRateType.swaggerGeneratedUnknown;
+    return CrewRateType.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewRateTypeMap.entries
+  return $CrewRateTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewRateType.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.CrewRateType.swaggerGeneratedUnknown, ''))
+              const MapEntry(CrewRateType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> crewRateTypeListToJson(List<enums.CrewRateType>? crewRateType) {
+List<String> crewRateTypeListToJson(List<CrewRateType>? crewRateType) {
   if (crewRateType == null) {
     return [];
   }
 
-  return crewRateType.map((e) => enums.$CrewRateTypeMap[e]!).toList();
+  return crewRateType.map((e) => $CrewRateTypeMap[e]!).toList();
 }
 
-List<enums.CrewRateType> crewRateTypeListFromJson(List? crewRateType) {
+List<CrewRateType> crewRateTypeListFromJson(List? crewRateType) {
   if (crewRateType == null) {
     return [];
   }
@@ -8682,37 +8680,37 @@ List<enums.CrewRateType> crewRateTypeListFromJson(List? crewRateType) {
 }
 
 String? crewTravelRateSourceToJson(
-    enums.CrewTravelRateSource? crewTravelRateSource) {
-  return enums.$CrewTravelRateSourceMap[crewTravelRateSource];
+    CrewTravelRateSource? crewTravelRateSource) {
+  return $CrewTravelRateSourceMap[crewTravelRateSource];
 }
 
-enums.CrewTravelRateSource crewTravelRateSourceFromJson(
+CrewTravelRateSource crewTravelRateSourceFromJson(
     String? crewTravelRateSource) {
   if (crewTravelRateSource == null) {
-    return enums.CrewTravelRateSource.swaggerGeneratedUnknown;
+    return CrewTravelRateSource.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewTravelRateSourceMap.entries
+  return $CrewTravelRateSourceMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewTravelRateSource.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CrewTravelRateSource.swaggerGeneratedUnknown, ''))
+              CrewTravelRateSource.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewTravelRateSourceListToJson(
-    List<enums.CrewTravelRateSource>? crewTravelRateSource) {
+    List<CrewTravelRateSource>? crewTravelRateSource) {
   if (crewTravelRateSource == null) {
     return [];
   }
 
   return crewTravelRateSource
-      .map((e) => enums.$CrewTravelRateSourceMap[e]!)
+      .map((e) => $CrewTravelRateSourceMap[e]!)
       .toList();
 }
 
-List<enums.CrewTravelRateSource> crewTravelRateSourceListFromJson(
+List<CrewTravelRateSource> crewTravelRateSourceListFromJson(
     List? crewTravelRateSource) {
   if (crewTravelRateSource == null) {
     return [];
@@ -8723,33 +8721,33 @@ List<enums.CrewTravelRateSource> crewTravelRateSourceListFromJson(
       .toList();
 }
 
-String? crewShirtSizeToJson(enums.CrewShirtSize? crewShirtSize) {
-  return enums.$CrewShirtSizeMap[crewShirtSize];
+String? crewShirtSizeToJson(CrewShirtSize? crewShirtSize) {
+  return $CrewShirtSizeMap[crewShirtSize];
 }
 
-enums.CrewShirtSize crewShirtSizeFromJson(String? crewShirtSize) {
+CrewShirtSize crewShirtSizeFromJson(String? crewShirtSize) {
   if (crewShirtSize == null) {
-    return enums.CrewShirtSize.swaggerGeneratedUnknown;
+    return CrewShirtSize.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewShirtSizeMap.entries
+  return $CrewShirtSizeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewShirtSize.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.CrewShirtSize.swaggerGeneratedUnknown, ''))
+              const MapEntry(CrewShirtSize.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> crewShirtSizeListToJson(List<enums.CrewShirtSize>? crewShirtSize) {
+List<String> crewShirtSizeListToJson(List<CrewShirtSize>? crewShirtSize) {
   if (crewShirtSize == null) {
     return [];
   }
 
-  return crewShirtSize.map((e) => enums.$CrewShirtSizeMap[e]!).toList();
+  return crewShirtSize.map((e) => $CrewShirtSizeMap[e]!).toList();
 }
 
-List<enums.CrewShirtSize> crewShirtSizeListFromJson(List? crewShirtSize) {
+List<CrewShirtSize> crewShirtSizeListFromJson(List? crewShirtSize) {
   if (crewShirtSize == null) {
     return [];
   }
@@ -8757,34 +8755,34 @@ List<enums.CrewShirtSize> crewShirtSizeListFromJson(List? crewShirtSize) {
   return crewShirtSize.map((e) => crewShirtSizeFromJson(e.toString())).toList();
 }
 
-String? crewRatingTypeToJson(enums.CrewRatingType? crewRatingType) {
-  return enums.$CrewRatingTypeMap[crewRatingType];
+String? crewRatingTypeToJson(CrewRatingType? crewRatingType) {
+  return $CrewRatingTypeMap[crewRatingType];
 }
 
-enums.CrewRatingType crewRatingTypeFromJson(String? crewRatingType) {
+CrewRatingType crewRatingTypeFromJson(String? crewRatingType) {
   if (crewRatingType == null) {
-    return enums.CrewRatingType.swaggerGeneratedUnknown;
+    return CrewRatingType.swaggerGeneratedUnknown;
   }
 
-  return enums.$CrewRatingTypeMap.entries
+  return $CrewRatingTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewRatingType.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.CrewRatingType.swaggerGeneratedUnknown, ''))
+              const MapEntry(CrewRatingType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> crewRatingTypeListToJson(
-    List<enums.CrewRatingType>? crewRatingType) {
+    List<CrewRatingType>? crewRatingType) {
   if (crewRatingType == null) {
     return [];
   }
 
-  return crewRatingType.map((e) => enums.$CrewRatingTypeMap[e]!).toList();
+  return crewRatingType.map((e) => $CrewRatingTypeMap[e]!).toList();
 }
 
-List<enums.CrewRatingType> crewRatingTypeListFromJson(List? crewRatingType) {
+List<CrewRatingType> crewRatingTypeListFromJson(List? crewRatingType) {
   if (crewRatingType == null) {
     return [];
   }
@@ -8795,38 +8793,38 @@ List<enums.CrewRatingType> crewRatingTypeListFromJson(List? crewRatingType) {
 }
 
 String? customFieldResponseDataTypeToJson(
-    enums.CustomFieldResponseDataType? customFieldResponseDataType) {
-  return enums.$CustomFieldResponseDataTypeMap[customFieldResponseDataType];
+    CustomFieldResponseDataType? customFieldResponseDataType) {
+  return $CustomFieldResponseDataTypeMap[customFieldResponseDataType];
 }
 
-enums.CustomFieldResponseDataType customFieldResponseDataTypeFromJson(
+CustomFieldResponseDataType customFieldResponseDataTypeFromJson(
     String? customFieldResponseDataType) {
   if (customFieldResponseDataType == null) {
-    return enums.CustomFieldResponseDataType.swaggerGeneratedUnknown;
+    return CustomFieldResponseDataType.swaggerGeneratedUnknown;
   }
 
-  return enums.$CustomFieldResponseDataTypeMap.entries
+  return $CustomFieldResponseDataTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               customFieldResponseDataType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CustomFieldResponseDataType.swaggerGeneratedUnknown, ''))
+              CustomFieldResponseDataType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> customFieldResponseDataTypeListToJson(
-    List<enums.CustomFieldResponseDataType>? customFieldResponseDataType) {
+    List<CustomFieldResponseDataType>? customFieldResponseDataType) {
   if (customFieldResponseDataType == null) {
     return [];
   }
 
   return customFieldResponseDataType
-      .map((e) => enums.$CustomFieldResponseDataTypeMap[e]!)
+      .map((e) => $CustomFieldResponseDataTypeMap[e]!)
       .toList();
 }
 
-List<enums.CustomFieldResponseDataType> customFieldResponseDataTypeListFromJson(
+List<CustomFieldResponseDataType> customFieldResponseDataTypeListFromJson(
     List? customFieldResponseDataType) {
   if (customFieldResponseDataType == null) {
     return [];
@@ -8837,34 +8835,34 @@ List<enums.CustomFieldResponseDataType> customFieldResponseDataTypeListFromJson(
       .toList();
 }
 
-String? customFieldStatusToJson(enums.CustomFieldStatus? customFieldStatus) {
-  return enums.$CustomFieldStatusMap[customFieldStatus];
+String? customFieldStatusToJson(CustomFieldStatus? customFieldStatus) {
+  return $CustomFieldStatusMap[customFieldStatus];
 }
 
-enums.CustomFieldStatus customFieldStatusFromJson(String? customFieldStatus) {
+CustomFieldStatus customFieldStatusFromJson(String? customFieldStatus) {
   if (customFieldStatus == null) {
-    return enums.CustomFieldStatus.swaggerGeneratedUnknown;
+    return CustomFieldStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$CustomFieldStatusMap.entries
+  return $CustomFieldStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == customFieldStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CustomFieldStatus.swaggerGeneratedUnknown, ''))
+              CustomFieldStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> customFieldStatusListToJson(
-    List<enums.CustomFieldStatus>? customFieldStatus) {
+    List<CustomFieldStatus>? customFieldStatus) {
   if (customFieldStatus == null) {
     return [];
   }
 
-  return customFieldStatus.map((e) => enums.$CustomFieldStatusMap[e]!).toList();
+  return customFieldStatus.map((e) => $CustomFieldStatusMap[e]!).toList();
 }
 
-List<enums.CustomFieldStatus> customFieldStatusListFromJson(
+List<CustomFieldStatus> customFieldStatusListFromJson(
     List? customFieldStatus) {
   if (customFieldStatus == null) {
     return [];
@@ -8876,37 +8874,37 @@ List<enums.CustomFieldStatus> customFieldStatusListFromJson(
 }
 
 String? customFieldDataTypeToJson(
-    enums.CustomFieldDataType? customFieldDataType) {
-  return enums.$CustomFieldDataTypeMap[customFieldDataType];
+    CustomFieldDataType? customFieldDataType) {
+  return $CustomFieldDataTypeMap[customFieldDataType];
 }
 
-enums.CustomFieldDataType customFieldDataTypeFromJson(
+CustomFieldDataType customFieldDataTypeFromJson(
     String? customFieldDataType) {
   if (customFieldDataType == null) {
-    return enums.CustomFieldDataType.swaggerGeneratedUnknown;
+    return CustomFieldDataType.swaggerGeneratedUnknown;
   }
 
-  return enums.$CustomFieldDataTypeMap.entries
+  return $CustomFieldDataTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == customFieldDataType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CustomFieldDataType.swaggerGeneratedUnknown, ''))
+              CustomFieldDataType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> customFieldDataTypeListToJson(
-    List<enums.CustomFieldDataType>? customFieldDataType) {
+    List<CustomFieldDataType>? customFieldDataType) {
   if (customFieldDataType == null) {
     return [];
   }
 
   return customFieldDataType
-      .map((e) => enums.$CustomFieldDataTypeMap[e]!)
+      .map((e) => $CustomFieldDataTypeMap[e]!)
       .toList();
 }
 
-List<enums.CustomFieldDataType> customFieldDataTypeListFromJson(
+List<CustomFieldDataType> customFieldDataTypeListFromJson(
     List? customFieldDataType) {
   if (customFieldDataType == null) {
     return [];
@@ -8918,38 +8916,38 @@ List<enums.CustomFieldDataType> customFieldDataTypeListFromJson(
 }
 
 String? customFieldRegistrationToJson(
-    enums.CustomFieldRegistration? customFieldRegistration) {
-  return enums.$CustomFieldRegistrationMap[customFieldRegistration];
+    CustomFieldRegistration? customFieldRegistration) {
+  return $CustomFieldRegistrationMap[customFieldRegistration];
 }
 
-enums.CustomFieldRegistration customFieldRegistrationFromJson(
+CustomFieldRegistration customFieldRegistrationFromJson(
     String? customFieldRegistration) {
   if (customFieldRegistration == null) {
-    return enums.CustomFieldRegistration.swaggerGeneratedUnknown;
+    return CustomFieldRegistration.swaggerGeneratedUnknown;
   }
 
-  return enums.$CustomFieldRegistrationMap.entries
+  return $CustomFieldRegistrationMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               customFieldRegistration.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.CustomFieldRegistration.swaggerGeneratedUnknown, ''))
+              CustomFieldRegistration.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> customFieldRegistrationListToJson(
-    List<enums.CustomFieldRegistration>? customFieldRegistration) {
+    List<CustomFieldRegistration>? customFieldRegistration) {
   if (customFieldRegistration == null) {
     return [];
   }
 
   return customFieldRegistration
-      .map((e) => enums.$CustomFieldRegistrationMap[e]!)
+      .map((e) => $CustomFieldRegistrationMap[e]!)
       .toList();
 }
 
-List<enums.CustomFieldRegistration> customFieldRegistrationListFromJson(
+List<CustomFieldRegistration> customFieldRegistrationListFromJson(
     List? customFieldRegistration) {
   if (customFieldRegistration == null) {
     return [];
@@ -8960,34 +8958,34 @@ List<enums.CustomFieldRegistration> customFieldRegistrationListFromJson(
       .toList();
 }
 
-String? divisionStatusToJson(enums.DivisionStatus? divisionStatus) {
-  return enums.$DivisionStatusMap[divisionStatus];
+String? divisionStatusToJson(DivisionStatus? divisionStatus) {
+  return $DivisionStatusMap[divisionStatus];
 }
 
-enums.DivisionStatus divisionStatusFromJson(String? divisionStatus) {
+DivisionStatus divisionStatusFromJson(String? divisionStatus) {
   if (divisionStatus == null) {
-    return enums.DivisionStatus.swaggerGeneratedUnknown;
+    return DivisionStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$DivisionStatusMap.entries
+  return $DivisionStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == divisionStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.DivisionStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(DivisionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> divisionStatusListToJson(
-    List<enums.DivisionStatus>? divisionStatus) {
+    List<DivisionStatus>? divisionStatus) {
   if (divisionStatus == null) {
     return [];
   }
 
-  return divisionStatus.map((e) => enums.$DivisionStatusMap[e]!).toList();
+  return divisionStatus.map((e) => $DivisionStatusMap[e]!).toList();
 }
 
-List<enums.DivisionStatus> divisionStatusListFromJson(List? divisionStatus) {
+List<DivisionStatus> divisionStatusListFromJson(List? divisionStatus) {
   if (divisionStatus == null) {
     return [];
   }
@@ -8998,38 +8996,38 @@ List<enums.DivisionStatus> divisionStatusListFromJson(List? divisionStatus) {
 }
 
 String? eventCollectionStatusToJson(
-    enums.EventCollectionStatus? eventCollectionStatus) {
-  return enums.$EventCollectionStatusMap[eventCollectionStatus];
+    EventCollectionStatus? eventCollectionStatus) {
+  return $EventCollectionStatusMap[eventCollectionStatus];
 }
 
-enums.EventCollectionStatus eventCollectionStatusFromJson(
+EventCollectionStatus eventCollectionStatusFromJson(
     String? eventCollectionStatus) {
   if (eventCollectionStatus == null) {
-    return enums.EventCollectionStatus.swaggerGeneratedUnknown;
+    return EventCollectionStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventCollectionStatusMap.entries
+  return $EventCollectionStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventCollectionStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventCollectionStatus.swaggerGeneratedUnknown, ''))
+              EventCollectionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventCollectionStatusListToJson(
-    List<enums.EventCollectionStatus>? eventCollectionStatus) {
+    List<EventCollectionStatus>? eventCollectionStatus) {
   if (eventCollectionStatus == null) {
     return [];
   }
 
   return eventCollectionStatus
-      .map((e) => enums.$EventCollectionStatusMap[e]!)
+      .map((e) => $EventCollectionStatusMap[e]!)
       .toList();
 }
 
-List<enums.EventCollectionStatus> eventCollectionStatusListFromJson(
+List<EventCollectionStatus> eventCollectionStatusListFromJson(
     List? eventCollectionStatus) {
   if (eventCollectionStatus == null) {
     return [];
@@ -9040,34 +9038,34 @@ List<enums.EventCollectionStatus> eventCollectionStatusListFromJson(
       .toList();
 }
 
-String? eventNoteStatusToJson(enums.EventNoteStatus? eventNoteStatus) {
-  return enums.$EventNoteStatusMap[eventNoteStatus];
+String? eventNoteStatusToJson(EventNoteStatus? eventNoteStatus) {
+  return $EventNoteStatusMap[eventNoteStatus];
 }
 
-enums.EventNoteStatus eventNoteStatusFromJson(String? eventNoteStatus) {
+EventNoteStatus eventNoteStatusFromJson(String? eventNoteStatus) {
   if (eventNoteStatus == null) {
-    return enums.EventNoteStatus.swaggerGeneratedUnknown;
+    return EventNoteStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventNoteStatusMap.entries
+  return $EventNoteStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == eventNoteStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.EventNoteStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(EventNoteStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventNoteStatusListToJson(
-    List<enums.EventNoteStatus>? eventNoteStatus) {
+    List<EventNoteStatus>? eventNoteStatus) {
   if (eventNoteStatus == null) {
     return [];
   }
 
-  return eventNoteStatus.map((e) => enums.$EventNoteStatusMap[e]!).toList();
+  return eventNoteStatus.map((e) => $EventNoteStatusMap[e]!).toList();
 }
 
-List<enums.EventNoteStatus> eventNoteStatusListFromJson(List? eventNoteStatus) {
+List<EventNoteStatus> eventNoteStatusListFromJson(List? eventNoteStatus) {
   if (eventNoteStatus == null) {
     return [];
   }
@@ -9077,34 +9075,34 @@ List<enums.EventNoteStatus> eventNoteStatusListFromJson(List? eventNoteStatus) {
       .toList();
 }
 
-String? scheduleEntryTypeToJson(enums.ScheduleEntryType? scheduleEntryType) {
-  return enums.$ScheduleEntryTypeMap[scheduleEntryType];
+String? scheduleEntryTypeToJson(ScheduleEntryType? scheduleEntryType) {
+  return $ScheduleEntryTypeMap[scheduleEntryType];
 }
 
-enums.ScheduleEntryType scheduleEntryTypeFromJson(String? scheduleEntryType) {
+ScheduleEntryType scheduleEntryTypeFromJson(String? scheduleEntryType) {
   if (scheduleEntryType == null) {
-    return enums.ScheduleEntryType.swaggerGeneratedUnknown;
+    return ScheduleEntryType.swaggerGeneratedUnknown;
   }
 
-  return enums.$ScheduleEntryTypeMap.entries
+  return $ScheduleEntryTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == scheduleEntryType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.ScheduleEntryType.swaggerGeneratedUnknown, ''))
+              ScheduleEntryType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> scheduleEntryTypeListToJson(
-    List<enums.ScheduleEntryType>? scheduleEntryType) {
+    List<ScheduleEntryType>? scheduleEntryType) {
   if (scheduleEntryType == null) {
     return [];
   }
 
-  return scheduleEntryType.map((e) => enums.$ScheduleEntryTypeMap[e]!).toList();
+  return scheduleEntryType.map((e) => $ScheduleEntryTypeMap[e]!).toList();
 }
 
-List<enums.ScheduleEntryType> scheduleEntryTypeListFromJson(
+List<ScheduleEntryType> scheduleEntryTypeListFromJson(
     List? scheduleEntryType) {
   if (scheduleEntryType == null) {
     return [];
@@ -9116,37 +9114,37 @@ List<enums.ScheduleEntryType> scheduleEntryTypeListFromJson(
 }
 
 String? eventPositionStatusToJson(
-    enums.EventPositionStatus? eventPositionStatus) {
-  return enums.$EventPositionStatusMap[eventPositionStatus];
+    EventPositionStatus? eventPositionStatus) {
+  return $EventPositionStatusMap[eventPositionStatus];
 }
 
-enums.EventPositionStatus eventPositionStatusFromJson(
+EventPositionStatus eventPositionStatusFromJson(
     String? eventPositionStatus) {
   if (eventPositionStatus == null) {
-    return enums.EventPositionStatus.swaggerGeneratedUnknown;
+    return EventPositionStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventPositionStatusMap.entries
+  return $EventPositionStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == eventPositionStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventPositionStatus.swaggerGeneratedUnknown, ''))
+              EventPositionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventPositionStatusListToJson(
-    List<enums.EventPositionStatus>? eventPositionStatus) {
+    List<EventPositionStatus>? eventPositionStatus) {
   if (eventPositionStatus == null) {
     return [];
   }
 
   return eventPositionStatus
-      .map((e) => enums.$EventPositionStatusMap[e]!)
+      .map((e) => $EventPositionStatusMap[e]!)
       .toList();
 }
 
-List<enums.EventPositionStatus> eventPositionStatusListFromJson(
+List<EventPositionStatus> eventPositionStatusListFromJson(
     List? eventPositionStatus) {
   if (eventPositionStatus == null) {
     return [];
@@ -9158,38 +9156,38 @@ List<enums.EventPositionStatus> eventPositionStatusListFromJson(
 }
 
 String? eventPositionRateSettingToJson(
-    enums.EventPositionRateSetting? eventPositionRateSetting) {
-  return enums.$EventPositionRateSettingMap[eventPositionRateSetting];
+    EventPositionRateSetting? eventPositionRateSetting) {
+  return $EventPositionRateSettingMap[eventPositionRateSetting];
 }
 
-enums.EventPositionRateSetting eventPositionRateSettingFromJson(
+EventPositionRateSetting eventPositionRateSettingFromJson(
     String? eventPositionRateSetting) {
   if (eventPositionRateSetting == null) {
-    return enums.EventPositionRateSetting.swaggerGeneratedUnknown;
+    return EventPositionRateSetting.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventPositionRateSettingMap.entries
+  return $EventPositionRateSettingMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventPositionRateSetting.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventPositionRateSetting.swaggerGeneratedUnknown, ''))
+              EventPositionRateSetting.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventPositionRateSettingListToJson(
-    List<enums.EventPositionRateSetting>? eventPositionRateSetting) {
+    List<EventPositionRateSetting>? eventPositionRateSetting) {
   if (eventPositionRateSetting == null) {
     return [];
   }
 
   return eventPositionRateSetting
-      .map((e) => enums.$EventPositionRateSettingMap[e]!)
+      .map((e) => $EventPositionRateSettingMap[e]!)
       .toList();
 }
 
-List<enums.EventPositionRateSetting> eventPositionRateSettingListFromJson(
+List<EventPositionRateSetting> eventPositionRateSettingListFromJson(
     List? eventPositionRateSetting) {
   if (eventPositionRateSetting == null) {
     return [];
@@ -9201,38 +9199,38 @@ List<enums.EventPositionRateSetting> eventPositionRateSettingListFromJson(
 }
 
 String? eventPositionRateTypeToJson(
-    enums.EventPositionRateType? eventPositionRateType) {
-  return enums.$EventPositionRateTypeMap[eventPositionRateType];
+    EventPositionRateType? eventPositionRateType) {
+  return $EventPositionRateTypeMap[eventPositionRateType];
 }
 
-enums.EventPositionRateType eventPositionRateTypeFromJson(
+EventPositionRateType eventPositionRateTypeFromJson(
     String? eventPositionRateType) {
   if (eventPositionRateType == null) {
-    return enums.EventPositionRateType.swaggerGeneratedUnknown;
+    return EventPositionRateType.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventPositionRateTypeMap.entries
+  return $EventPositionRateTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventPositionRateType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventPositionRateType.swaggerGeneratedUnknown, ''))
+              EventPositionRateType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventPositionRateTypeListToJson(
-    List<enums.EventPositionRateType>? eventPositionRateType) {
+    List<EventPositionRateType>? eventPositionRateType) {
   if (eventPositionRateType == null) {
     return [];
   }
 
   return eventPositionRateType
-      .map((e) => enums.$EventPositionRateTypeMap[e]!)
+      .map((e) => $EventPositionRateTypeMap[e]!)
       .toList();
 }
 
-List<enums.EventPositionRateType> eventPositionRateTypeListFromJson(
+List<EventPositionRateType> eventPositionRateTypeListFromJson(
     List? eventPositionRateType) {
   if (eventPositionRateType == null) {
     return [];
@@ -9244,38 +9242,38 @@ List<enums.EventPositionRateType> eventPositionRateTypeListFromJson(
 }
 
 String? eventPositionBilledRateTypeToJson(
-    enums.EventPositionBilledRateType? eventPositionBilledRateType) {
-  return enums.$EventPositionBilledRateTypeMap[eventPositionBilledRateType];
+    EventPositionBilledRateType? eventPositionBilledRateType) {
+  return $EventPositionBilledRateTypeMap[eventPositionBilledRateType];
 }
 
-enums.EventPositionBilledRateType eventPositionBilledRateTypeFromJson(
+EventPositionBilledRateType eventPositionBilledRateTypeFromJson(
     String? eventPositionBilledRateType) {
   if (eventPositionBilledRateType == null) {
-    return enums.EventPositionBilledRateType.swaggerGeneratedUnknown;
+    return EventPositionBilledRateType.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventPositionBilledRateTypeMap.entries
+  return $EventPositionBilledRateTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventPositionBilledRateType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventPositionBilledRateType.swaggerGeneratedUnknown, ''))
+              EventPositionBilledRateType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventPositionBilledRateTypeListToJson(
-    List<enums.EventPositionBilledRateType>? eventPositionBilledRateType) {
+    List<EventPositionBilledRateType>? eventPositionBilledRateType) {
   if (eventPositionBilledRateType == null) {
     return [];
   }
 
   return eventPositionBilledRateType
-      .map((e) => enums.$EventPositionBilledRateTypeMap[e]!)
+      .map((e) => $EventPositionBilledRateTypeMap[e]!)
       .toList();
 }
 
-List<enums.EventPositionBilledRateType> eventPositionBilledRateTypeListFromJson(
+List<EventPositionBilledRateType> eventPositionBilledRateTypeListFromJson(
     List? eventPositionBilledRateType) {
   if (eventPositionBilledRateType == null) {
     return [];
@@ -9286,33 +9284,33 @@ List<enums.EventPositionBilledRateType> eventPositionBilledRateTypeListFromJson(
       .toList();
 }
 
-String? eventRoleRoleToJson(enums.EventRoleRole? eventRoleRole) {
-  return enums.$EventRoleRoleMap[eventRoleRole];
+String? eventRoleRoleToJson(EventRoleRole? eventRoleRole) {
+  return $EventRoleRoleMap[eventRoleRole];
 }
 
-enums.EventRoleRole eventRoleRoleFromJson(String? eventRoleRole) {
+EventRoleRole eventRoleRoleFromJson(String? eventRoleRole) {
   if (eventRoleRole == null) {
-    return enums.EventRoleRole.swaggerGeneratedUnknown;
+    return EventRoleRole.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventRoleRoleMap.entries
+  return $EventRoleRoleMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == eventRoleRole.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.EventRoleRole.swaggerGeneratedUnknown, ''))
+              const MapEntry(EventRoleRole.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> eventRoleRoleListToJson(List<enums.EventRoleRole>? eventRoleRole) {
+List<String> eventRoleRoleListToJson(List<EventRoleRole>? eventRoleRole) {
   if (eventRoleRole == null) {
     return [];
   }
 
-  return eventRoleRole.map((e) => enums.$EventRoleRoleMap[e]!).toList();
+  return eventRoleRole.map((e) => $EventRoleRoleMap[e]!).toList();
 }
 
-List<enums.EventRoleRole> eventRoleRoleListFromJson(List? eventRoleRole) {
+List<EventRoleRole> eventRoleRoleListFromJson(List? eventRoleRole) {
   if (eventRoleRole == null) {
     return [];
   }
@@ -9321,38 +9319,38 @@ List<enums.EventRoleRole> eventRoleRoleListFromJson(List? eventRoleRole) {
 }
 
 String? eventRosterPositionStatusToJson(
-    enums.EventRosterPositionStatus? eventRosterPositionStatus) {
-  return enums.$EventRosterPositionStatusMap[eventRosterPositionStatus];
+    EventRosterPositionStatus? eventRosterPositionStatus) {
+  return $EventRosterPositionStatusMap[eventRosterPositionStatus];
 }
 
-enums.EventRosterPositionStatus eventRosterPositionStatusFromJson(
+EventRosterPositionStatus eventRosterPositionStatusFromJson(
     String? eventRosterPositionStatus) {
   if (eventRosterPositionStatus == null) {
-    return enums.EventRosterPositionStatus.swaggerGeneratedUnknown;
+    return EventRosterPositionStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventRosterPositionStatusMap.entries
+  return $EventRosterPositionStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventRosterPositionStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventRosterPositionStatus.swaggerGeneratedUnknown, ''))
+              EventRosterPositionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventRosterPositionStatusListToJson(
-    List<enums.EventRosterPositionStatus>? eventRosterPositionStatus) {
+    List<EventRosterPositionStatus>? eventRosterPositionStatus) {
   if (eventRosterPositionStatus == null) {
     return [];
   }
 
   return eventRosterPositionStatus
-      .map((e) => enums.$EventRosterPositionStatusMap[e]!)
+      .map((e) => $EventRosterPositionStatusMap[e]!)
       .toList();
 }
 
-List<enums.EventRosterPositionStatus> eventRosterPositionStatusListFromJson(
+List<EventRosterPositionStatus> eventRosterPositionStatusListFromJson(
     List? eventRosterPositionStatus) {
   if (eventRosterPositionStatus == null) {
     return [];
@@ -9364,38 +9362,38 @@ List<enums.EventRosterPositionStatus> eventRosterPositionStatusListFromJson(
 }
 
 String? eventRosterPositionRateTypeToJson(
-    enums.EventRosterPositionRateType? eventRosterPositionRateType) {
-  return enums.$EventRosterPositionRateTypeMap[eventRosterPositionRateType];
+    EventRosterPositionRateType? eventRosterPositionRateType) {
+  return $EventRosterPositionRateTypeMap[eventRosterPositionRateType];
 }
 
-enums.EventRosterPositionRateType eventRosterPositionRateTypeFromJson(
+EventRosterPositionRateType eventRosterPositionRateTypeFromJson(
     String? eventRosterPositionRateType) {
   if (eventRosterPositionRateType == null) {
-    return enums.EventRosterPositionRateType.swaggerGeneratedUnknown;
+    return EventRosterPositionRateType.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventRosterPositionRateTypeMap.entries
+  return $EventRosterPositionRateTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventRosterPositionRateType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventRosterPositionRateType.swaggerGeneratedUnknown, ''))
+              EventRosterPositionRateType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventRosterPositionRateTypeListToJson(
-    List<enums.EventRosterPositionRateType>? eventRosterPositionRateType) {
+    List<EventRosterPositionRateType>? eventRosterPositionRateType) {
   if (eventRosterPositionRateType == null) {
     return [];
   }
 
   return eventRosterPositionRateType
-      .map((e) => enums.$EventRosterPositionRateTypeMap[e]!)
+      .map((e) => $EventRosterPositionRateTypeMap[e]!)
       .toList();
 }
 
-List<enums.EventRosterPositionRateType> eventRosterPositionRateTypeListFromJson(
+List<EventRosterPositionRateType> eventRosterPositionRateTypeListFromJson(
     List? eventRosterPositionRateType) {
   if (eventRosterPositionRateType == null) {
     return [];
@@ -9407,41 +9405,40 @@ List<enums.EventRosterPositionRateType> eventRosterPositionRateTypeListFromJson(
 }
 
 String? eventRosterPositionRemovalReasonToJson(
-    enums.EventRosterPositionRemovalReason? eventRosterPositionRemovalReason) {
-  return enums
-      .$EventRosterPositionRemovalReasonMap[eventRosterPositionRemovalReason];
+    EventRosterPositionRemovalReason? eventRosterPositionRemovalReason) {
+  return $EventRosterPositionRemovalReasonMap[eventRosterPositionRemovalReason];
 }
 
-enums.EventRosterPositionRemovalReason eventRosterPositionRemovalReasonFromJson(
+EventRosterPositionRemovalReason eventRosterPositionRemovalReasonFromJson(
     String? eventRosterPositionRemovalReason) {
   if (eventRosterPositionRemovalReason == null) {
-    return enums.EventRosterPositionRemovalReason.swaggerGeneratedUnknown;
+    return EventRosterPositionRemovalReason.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventRosterPositionRemovalReasonMap.entries
+  return $EventRosterPositionRemovalReasonMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventRosterPositionRemovalReason.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventRosterPositionRemovalReason.swaggerGeneratedUnknown,
+              EventRosterPositionRemovalReason.swaggerGeneratedUnknown,
               ''))
       .key;
 }
 
 List<String> eventRosterPositionRemovalReasonListToJson(
-    List<enums.EventRosterPositionRemovalReason>?
+    List<EventRosterPositionRemovalReason>?
         eventRosterPositionRemovalReason) {
   if (eventRosterPositionRemovalReason == null) {
     return [];
   }
 
   return eventRosterPositionRemovalReason
-      .map((e) => enums.$EventRosterPositionRemovalReasonMap[e]!)
+      .map((e) => $EventRosterPositionRemovalReasonMap[e]!)
       .toList();
 }
 
-List<enums.EventRosterPositionRemovalReason>
+List<EventRosterPositionRemovalReason>
     eventRosterPositionRemovalReasonListFromJson(
         List? eventRosterPositionRemovalReason) {
   if (eventRosterPositionRemovalReason == null) {
@@ -9454,45 +9451,44 @@ List<enums.EventRosterPositionRemovalReason>
 }
 
 String? eventRosterPositionSerializerNoAnalyticsStatusToJson(
-    enums.EventRosterPositionSerializerNoAnalyticsStatus?
+    EventRosterPositionSerializerNoAnalyticsStatus?
         eventRosterPositionSerializerNoAnalyticsStatus) {
-  return enums.$EventRosterPositionSerializerNoAnalyticsStatusMap[
+  return $EventRosterPositionSerializerNoAnalyticsStatusMap[
       eventRosterPositionSerializerNoAnalyticsStatus];
 }
 
-enums.EventRosterPositionSerializerNoAnalyticsStatus
+EventRosterPositionSerializerNoAnalyticsStatus
     eventRosterPositionSerializerNoAnalyticsStatusFromJson(
         String? eventRosterPositionSerializerNoAnalyticsStatus) {
   if (eventRosterPositionSerializerNoAnalyticsStatus == null) {
-    return enums
-        .EventRosterPositionSerializerNoAnalyticsStatus.swaggerGeneratedUnknown;
+    return EventRosterPositionSerializerNoAnalyticsStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventRosterPositionSerializerNoAnalyticsStatusMap.entries
+  return $EventRosterPositionSerializerNoAnalyticsStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventRosterPositionSerializerNoAnalyticsStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventRosterPositionSerializerNoAnalyticsStatus
+              EventRosterPositionSerializerNoAnalyticsStatus
                   .swaggerGeneratedUnknown,
               ''))
       .key;
 }
 
 List<String> eventRosterPositionSerializerNoAnalyticsStatusListToJson(
-    List<enums.EventRosterPositionSerializerNoAnalyticsStatus>?
+    List<EventRosterPositionSerializerNoAnalyticsStatus>?
         eventRosterPositionSerializerNoAnalyticsStatus) {
   if (eventRosterPositionSerializerNoAnalyticsStatus == null) {
     return [];
   }
 
   return eventRosterPositionSerializerNoAnalyticsStatus
-      .map((e) => enums.$EventRosterPositionSerializerNoAnalyticsStatusMap[e]!)
+      .map((e) => $EventRosterPositionSerializerNoAnalyticsStatusMap[e]!)
       .toList();
 }
 
-List<enums.EventRosterPositionSerializerNoAnalyticsStatus>
+List<EventRosterPositionSerializerNoAnalyticsStatus>
     eventRosterPositionSerializerNoAnalyticsStatusListFromJson(
         List? eventRosterPositionSerializerNoAnalyticsStatus) {
   if (eventRosterPositionSerializerNoAnalyticsStatus == null) {
@@ -9506,34 +9502,34 @@ List<enums.EventRosterPositionSerializerNoAnalyticsStatus>
 }
 
 String? eventRosterPositionSerializerNoAnalyticsRateTypeToJson(
-    enums.EventRosterPositionSerializerNoAnalyticsRateType?
+    EventRosterPositionSerializerNoAnalyticsRateType?
         eventRosterPositionSerializerNoAnalyticsRateType) {
-  return enums.$EventRosterPositionSerializerNoAnalyticsRateTypeMap[
+  return $EventRosterPositionSerializerNoAnalyticsRateTypeMap[
       eventRosterPositionSerializerNoAnalyticsRateType];
 }
 
-enums.EventRosterPositionSerializerNoAnalyticsRateType
+EventRosterPositionSerializerNoAnalyticsRateType
     eventRosterPositionSerializerNoAnalyticsRateTypeFromJson(
         String? eventRosterPositionSerializerNoAnalyticsRateType) {
   if (eventRosterPositionSerializerNoAnalyticsRateType == null) {
-    return enums.EventRosterPositionSerializerNoAnalyticsRateType
+    return EventRosterPositionSerializerNoAnalyticsRateType
         .swaggerGeneratedUnknown;
   }
 
-  return enums.$EventRosterPositionSerializerNoAnalyticsRateTypeMap.entries
+  return $EventRosterPositionSerializerNoAnalyticsRateTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventRosterPositionSerializerNoAnalyticsRateType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventRosterPositionSerializerNoAnalyticsRateType
+              EventRosterPositionSerializerNoAnalyticsRateType
                   .swaggerGeneratedUnknown,
               ''))
       .key;
 }
 
 List<String> eventRosterPositionSerializerNoAnalyticsRateTypeListToJson(
-    List<enums.EventRosterPositionSerializerNoAnalyticsRateType>?
+    List<EventRosterPositionSerializerNoAnalyticsRateType>?
         eventRosterPositionSerializerNoAnalyticsRateType) {
   if (eventRosterPositionSerializerNoAnalyticsRateType == null) {
     return [];
@@ -9541,11 +9537,11 @@ List<String> eventRosterPositionSerializerNoAnalyticsRateTypeListToJson(
 
   return eventRosterPositionSerializerNoAnalyticsRateType
       .map(
-          (e) => enums.$EventRosterPositionSerializerNoAnalyticsRateTypeMap[e]!)
+          (e) => $EventRosterPositionSerializerNoAnalyticsRateTypeMap[e]!)
       .toList();
 }
 
-List<enums.EventRosterPositionSerializerNoAnalyticsRateType>
+List<EventRosterPositionSerializerNoAnalyticsRateType>
     eventRosterPositionSerializerNoAnalyticsRateTypeListFromJson(
         List? eventRosterPositionSerializerNoAnalyticsRateType) {
   if (eventRosterPositionSerializerNoAnalyticsRateType == null) {
@@ -9559,35 +9555,35 @@ List<enums.EventRosterPositionSerializerNoAnalyticsRateType>
 }
 
 String? eventRosterPositionSerializerNoAnalyticsRemovalReasonToJson(
-    enums.EventRosterPositionSerializerNoAnalyticsRemovalReason?
+    EventRosterPositionSerializerNoAnalyticsRemovalReason?
         eventRosterPositionSerializerNoAnalyticsRemovalReason) {
-  return enums.$EventRosterPositionSerializerNoAnalyticsRemovalReasonMap[
+  return $EventRosterPositionSerializerNoAnalyticsRemovalReasonMap[
       eventRosterPositionSerializerNoAnalyticsRemovalReason];
 }
 
-enums.EventRosterPositionSerializerNoAnalyticsRemovalReason
+EventRosterPositionSerializerNoAnalyticsRemovalReason
     eventRosterPositionSerializerNoAnalyticsRemovalReasonFromJson(
         String? eventRosterPositionSerializerNoAnalyticsRemovalReason) {
   if (eventRosterPositionSerializerNoAnalyticsRemovalReason == null) {
-    return enums.EventRosterPositionSerializerNoAnalyticsRemovalReason
+    return EventRosterPositionSerializerNoAnalyticsRemovalReason
         .swaggerGeneratedUnknown;
   }
 
-  return enums.$EventRosterPositionSerializerNoAnalyticsRemovalReasonMap.entries
+  return $EventRosterPositionSerializerNoAnalyticsRemovalReasonMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventRosterPositionSerializerNoAnalyticsRemovalReason
                   .toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventRosterPositionSerializerNoAnalyticsRemovalReason
+              EventRosterPositionSerializerNoAnalyticsRemovalReason
                   .swaggerGeneratedUnknown,
               ''))
       .key;
 }
 
 List<String> eventRosterPositionSerializerNoAnalyticsRemovalReasonListToJson(
-    List<enums.EventRosterPositionSerializerNoAnalyticsRemovalReason>?
+    List<EventRosterPositionSerializerNoAnalyticsRemovalReason>?
         eventRosterPositionSerializerNoAnalyticsRemovalReason) {
   if (eventRosterPositionSerializerNoAnalyticsRemovalReason == null) {
     return [];
@@ -9595,11 +9591,11 @@ List<String> eventRosterPositionSerializerNoAnalyticsRemovalReasonListToJson(
 
   return eventRosterPositionSerializerNoAnalyticsRemovalReason
       .map((e) =>
-          enums.$EventRosterPositionSerializerNoAnalyticsRemovalReasonMap[e]!)
+          $EventRosterPositionSerializerNoAnalyticsRemovalReasonMap[e]!)
       .toList();
 }
 
-List<enums.EventRosterPositionSerializerNoAnalyticsRemovalReason>
+List<EventRosterPositionSerializerNoAnalyticsRemovalReason>
     eventRosterPositionSerializerNoAnalyticsRemovalReasonListFromJson(
         List? eventRosterPositionSerializerNoAnalyticsRemovalReason) {
   if (eventRosterPositionSerializerNoAnalyticsRemovalReason == null) {
@@ -9612,32 +9608,32 @@ List<enums.EventRosterPositionSerializerNoAnalyticsRemovalReason>
       .toList();
 }
 
-String? eventStatusToJson(enums.EventStatus? eventStatus) {
-  return enums.$EventStatusMap[eventStatus];
+String? eventStatusToJson(EventStatus? eventStatus) {
+  return $EventStatusMap[eventStatus];
 }
 
-enums.EventStatus eventStatusFromJson(String? eventStatus) {
+EventStatus eventStatusFromJson(String? eventStatus) {
   if (eventStatus == null) {
-    return enums.EventStatus.swaggerGeneratedUnknown;
+    return EventStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventStatusMap.entries
+  return $EventStatusMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == eventStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.EventStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(EventStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> eventStatusListToJson(List<enums.EventStatus>? eventStatus) {
+List<String> eventStatusListToJson(List<EventStatus>? eventStatus) {
   if (eventStatus == null) {
     return [];
   }
 
-  return eventStatus.map((e) => enums.$EventStatusMap[e]!).toList();
+  return eventStatus.map((e) => $EventStatusMap[e]!).toList();
 }
 
-List<enums.EventStatus> eventStatusListFromJson(List? eventStatus) {
+List<EventStatus> eventStatusListFromJson(List? eventStatus) {
   if (eventStatus == null) {
     return [];
   }
@@ -9646,38 +9642,38 @@ List<enums.EventStatus> eventStatusListFromJson(List? eventStatus) {
 }
 
 String? eventTravelBookingStatusToJson(
-    enums.EventTravelBookingStatus? eventTravelBookingStatus) {
-  return enums.$EventTravelBookingStatusMap[eventTravelBookingStatus];
+    EventTravelBookingStatus? eventTravelBookingStatus) {
+  return $EventTravelBookingStatusMap[eventTravelBookingStatus];
 }
 
-enums.EventTravelBookingStatus eventTravelBookingStatusFromJson(
+EventTravelBookingStatus eventTravelBookingStatusFromJson(
     String? eventTravelBookingStatus) {
   if (eventTravelBookingStatus == null) {
-    return enums.EventTravelBookingStatus.swaggerGeneratedUnknown;
+    return EventTravelBookingStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$EventTravelBookingStatusMap.entries
+  return $EventTravelBookingStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               eventTravelBookingStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.EventTravelBookingStatus.swaggerGeneratedUnknown, ''))
+              EventTravelBookingStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventTravelBookingStatusListToJson(
-    List<enums.EventTravelBookingStatus>? eventTravelBookingStatus) {
+    List<EventTravelBookingStatus>? eventTravelBookingStatus) {
   if (eventTravelBookingStatus == null) {
     return [];
   }
 
   return eventTravelBookingStatus
-      .map((e) => enums.$EventTravelBookingStatusMap[e]!)
+      .map((e) => $EventTravelBookingStatusMap[e]!)
       .toList();
 }
 
-List<enums.EventTravelBookingStatus> eventTravelBookingStatusListFromJson(
+List<EventTravelBookingStatus> eventTravelBookingStatusListFromJson(
     List? eventTravelBookingStatus) {
   if (eventTravelBookingStatus == null) {
     return [];
@@ -9688,34 +9684,34 @@ List<enums.EventTravelBookingStatus> eventTravelBookingStatusListFromJson(
       .toList();
 }
 
-String? positionStatusToJson(enums.PositionStatus? positionStatus) {
-  return enums.$PositionStatusMap[positionStatus];
+String? positionStatusToJson(PositionStatus? positionStatus) {
+  return $PositionStatusMap[positionStatus];
 }
 
-enums.PositionStatus positionStatusFromJson(String? positionStatus) {
+PositionStatus positionStatusFromJson(String? positionStatus) {
   if (positionStatus == null) {
-    return enums.PositionStatus.swaggerGeneratedUnknown;
+    return PositionStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$PositionStatusMap.entries
+  return $PositionStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == positionStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.PositionStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(PositionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> positionStatusListToJson(
-    List<enums.PositionStatus>? positionStatus) {
+    List<PositionStatus>? positionStatus) {
   if (positionStatus == null) {
     return [];
   }
 
-  return positionStatus.map((e) => enums.$PositionStatusMap[e]!).toList();
+  return positionStatus.map((e) => $PositionStatusMap[e]!).toList();
 }
 
-List<enums.PositionStatus> positionStatusListFromJson(List? positionStatus) {
+List<PositionStatus> positionStatusListFromJson(List? positionStatus) {
   if (positionStatus == null) {
     return [];
   }
@@ -9726,38 +9722,38 @@ List<enums.PositionStatus> positionStatusListFromJson(List? positionStatus) {
 }
 
 String? positionApplicationStatusToJson(
-    enums.PositionApplicationStatus? positionApplicationStatus) {
-  return enums.$PositionApplicationStatusMap[positionApplicationStatus];
+    PositionApplicationStatus? positionApplicationStatus) {
+  return $PositionApplicationStatusMap[positionApplicationStatus];
 }
 
-enums.PositionApplicationStatus positionApplicationStatusFromJson(
+PositionApplicationStatus positionApplicationStatusFromJson(
     String? positionApplicationStatus) {
   if (positionApplicationStatus == null) {
-    return enums.PositionApplicationStatus.swaggerGeneratedUnknown;
+    return PositionApplicationStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$PositionApplicationStatusMap.entries
+  return $PositionApplicationStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() ==
               positionApplicationStatus.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.PositionApplicationStatus.swaggerGeneratedUnknown, ''))
+              PositionApplicationStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> positionApplicationStatusListToJson(
-    List<enums.PositionApplicationStatus>? positionApplicationStatus) {
+    List<PositionApplicationStatus>? positionApplicationStatus) {
   if (positionApplicationStatus == null) {
     return [];
   }
 
   return positionApplicationStatus
-      .map((e) => enums.$PositionApplicationStatusMap[e]!)
+      .map((e) => $PositionApplicationStatusMap[e]!)
       .toList();
 }
 
-List<enums.PositionApplicationStatus> positionApplicationStatusListFromJson(
+List<PositionApplicationStatus> positionApplicationStatusListFromJson(
     List? positionApplicationStatus) {
   if (positionApplicationStatus == null) {
     return [];
@@ -9768,34 +9764,34 @@ List<enums.PositionApplicationStatus> positionApplicationStatusListFromJson(
       .toList();
 }
 
-String? positionRate1TypeToJson(enums.PositionRate1Type? positionRate1Type) {
-  return enums.$PositionRate1TypeMap[positionRate1Type];
+String? positionRate1TypeToJson(PositionRate1Type? positionRate1Type) {
+  return $PositionRate1TypeMap[positionRate1Type];
 }
 
-enums.PositionRate1Type positionRate1TypeFromJson(String? positionRate1Type) {
+PositionRate1Type positionRate1TypeFromJson(String? positionRate1Type) {
   if (positionRate1Type == null) {
-    return enums.PositionRate1Type.swaggerGeneratedUnknown;
+    return PositionRate1Type.swaggerGeneratedUnknown;
   }
 
-  return enums.$PositionRate1TypeMap.entries
+  return $PositionRate1TypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == positionRate1Type.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.PositionRate1Type.swaggerGeneratedUnknown, ''))
+              PositionRate1Type.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> positionRate1TypeListToJson(
-    List<enums.PositionRate1Type>? positionRate1Type) {
+    List<PositionRate1Type>? positionRate1Type) {
   if (positionRate1Type == null) {
     return [];
   }
 
-  return positionRate1Type.map((e) => enums.$PositionRate1TypeMap[e]!).toList();
+  return positionRate1Type.map((e) => $PositionRate1TypeMap[e]!).toList();
 }
 
-List<enums.PositionRate1Type> positionRate1TypeListFromJson(
+List<PositionRate1Type> positionRate1TypeListFromJson(
     List? positionRate1Type) {
   if (positionRate1Type == null) {
     return [];
@@ -9806,34 +9802,34 @@ List<enums.PositionRate1Type> positionRate1TypeListFromJson(
       .toList();
 }
 
-String? positionRate2TypeToJson(enums.PositionRate2Type? positionRate2Type) {
-  return enums.$PositionRate2TypeMap[positionRate2Type];
+String? positionRate2TypeToJson(PositionRate2Type? positionRate2Type) {
+  return $PositionRate2TypeMap[positionRate2Type];
 }
 
-enums.PositionRate2Type positionRate2TypeFromJson(String? positionRate2Type) {
+PositionRate2Type positionRate2TypeFromJson(String? positionRate2Type) {
   if (positionRate2Type == null) {
-    return enums.PositionRate2Type.swaggerGeneratedUnknown;
+    return PositionRate2Type.swaggerGeneratedUnknown;
   }
 
-  return enums.$PositionRate2TypeMap.entries
+  return $PositionRate2TypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == positionRate2Type.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.PositionRate2Type.swaggerGeneratedUnknown, ''))
+              PositionRate2Type.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> positionRate2TypeListToJson(
-    List<enums.PositionRate2Type>? positionRate2Type) {
+    List<PositionRate2Type>? positionRate2Type) {
   if (positionRate2Type == null) {
     return [];
   }
 
-  return positionRate2Type.map((e) => enums.$PositionRate2TypeMap[e]!).toList();
+  return positionRate2Type.map((e) => $PositionRate2TypeMap[e]!).toList();
 }
 
-List<enums.PositionRate2Type> positionRate2TypeListFromJson(
+List<PositionRate2Type> positionRate2TypeListFromJson(
     List? positionRate2Type) {
   if (positionRate2Type == null) {
     return [];
@@ -9844,34 +9840,34 @@ List<enums.PositionRate2Type> positionRate2TypeListFromJson(
       .toList();
 }
 
-String? positionRate3TypeToJson(enums.PositionRate3Type? positionRate3Type) {
-  return enums.$PositionRate3TypeMap[positionRate3Type];
+String? positionRate3TypeToJson(PositionRate3Type? positionRate3Type) {
+  return $PositionRate3TypeMap[positionRate3Type];
 }
 
-enums.PositionRate3Type positionRate3TypeFromJson(String? positionRate3Type) {
+PositionRate3Type positionRate3TypeFromJson(String? positionRate3Type) {
   if (positionRate3Type == null) {
-    return enums.PositionRate3Type.swaggerGeneratedUnknown;
+    return PositionRate3Type.swaggerGeneratedUnknown;
   }
 
-  return enums.$PositionRate3TypeMap.entries
+  return $PositionRate3TypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == positionRate3Type.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.PositionRate3Type.swaggerGeneratedUnknown, ''))
+              PositionRate3Type.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> positionRate3TypeListToJson(
-    List<enums.PositionRate3Type>? positionRate3Type) {
+    List<PositionRate3Type>? positionRate3Type) {
   if (positionRate3Type == null) {
     return [];
   }
 
-  return positionRate3Type.map((e) => enums.$PositionRate3TypeMap[e]!).toList();
+  return positionRate3Type.map((e) => $PositionRate3TypeMap[e]!).toList();
 }
 
-List<enums.PositionRate3Type> positionRate3TypeListFromJson(
+List<PositionRate3Type> positionRate3TypeListFromJson(
     List? positionRate3Type) {
   if (positionRate3Type == null) {
     return [];
@@ -9882,32 +9878,32 @@ List<enums.PositionRate3Type> positionRate3TypeListFromJson(
       .toList();
 }
 
-String? tagColorToJson(enums.TagColor? tagColor) {
-  return enums.$TagColorMap[tagColor];
+String? tagColorToJson(TagColor? tagColor) {
+  return $TagColorMap[tagColor];
 }
 
-enums.TagColor tagColorFromJson(String? tagColor) {
+TagColor tagColorFromJson(String? tagColor) {
   if (tagColor == null) {
-    return enums.TagColor.swaggerGeneratedUnknown;
+    return TagColor.swaggerGeneratedUnknown;
   }
 
-  return enums.$TagColorMap.entries
+  return $TagColorMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == tagColor.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.TagColor.swaggerGeneratedUnknown, ''))
+              const MapEntry(TagColor.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> tagColorListToJson(List<enums.TagColor>? tagColor) {
+List<String> tagColorListToJson(List<TagColor>? tagColor) {
   if (tagColor == null) {
     return [];
   }
 
-  return tagColor.map((e) => enums.$TagColorMap[e]!).toList();
+  return tagColor.map((e) => $TagColorMap[e]!).toList();
 }
 
-List<enums.TagColor> tagColorListFromJson(List? tagColor) {
+List<TagColor> tagColorListFromJson(List? tagColor) {
   if (tagColor == null) {
     return [];
   }
@@ -9915,32 +9911,32 @@ List<enums.TagColor> tagColorListFromJson(List? tagColor) {
   return tagColor.map((e) => tagColorFromJson(e.toString())).toList();
 }
 
-String? tagStatusToJson(enums.TagStatus? tagStatus) {
-  return enums.$TagStatusMap[tagStatus];
+String? tagStatusToJson(TagStatus? tagStatus) {
+  return $TagStatusMap[tagStatus];
 }
 
-enums.TagStatus tagStatusFromJson(String? tagStatus) {
+TagStatus tagStatusFromJson(String? tagStatus) {
   if (tagStatus == null) {
-    return enums.TagStatus.swaggerGeneratedUnknown;
+    return TagStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$TagStatusMap.entries
+  return $TagStatusMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == tagStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.TagStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(TagStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> tagStatusListToJson(List<enums.TagStatus>? tagStatus) {
+List<String> tagStatusListToJson(List<TagStatus>? tagStatus) {
   if (tagStatus == null) {
     return [];
   }
 
-  return tagStatus.map((e) => enums.$TagStatusMap[e]!).toList();
+  return tagStatus.map((e) => $TagStatusMap[e]!).toList();
 }
 
-List<enums.TagStatus> tagStatusListFromJson(List? tagStatus) {
+List<TagStatus> tagStatusListFromJson(List? tagStatus) {
   if (tagStatus == null) {
     return [];
   }
@@ -9948,33 +9944,33 @@ List<enums.TagStatus> tagStatusListFromJson(List? tagStatus) {
   return tagStatus.map((e) => tagStatusFromJson(e.toString())).toList();
 }
 
-String? vendorStatusToJson(enums.VendorStatus? vendorStatus) {
-  return enums.$VendorStatusMap[vendorStatus];
+String? vendorStatusToJson(VendorStatus? vendorStatus) {
+  return $VendorStatusMap[vendorStatus];
 }
 
-enums.VendorStatus vendorStatusFromJson(String? vendorStatus) {
+VendorStatus vendorStatusFromJson(String? vendorStatus) {
   if (vendorStatus == null) {
-    return enums.VendorStatus.swaggerGeneratedUnknown;
+    return VendorStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$VendorStatusMap.entries
+  return $VendorStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == vendorStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.VendorStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(VendorStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> vendorStatusListToJson(List<enums.VendorStatus>? vendorStatus) {
+List<String> vendorStatusListToJson(List<VendorStatus>? vendorStatus) {
   if (vendorStatus == null) {
     return [];
   }
 
-  return vendorStatus.map((e) => enums.$VendorStatusMap[e]!).toList();
+  return vendorStatus.map((e) => $VendorStatusMap[e]!).toList();
 }
 
-List<enums.VendorStatus> vendorStatusListFromJson(List? vendorStatus) {
+List<VendorStatus> vendorStatusListFromJson(List? vendorStatus) {
   if (vendorStatus == null) {
     return [];
   }
@@ -9982,32 +9978,32 @@ List<enums.VendorStatus> vendorStatusListFromJson(List? vendorStatus) {
   return vendorStatus.map((e) => vendorStatusFromJson(e.toString())).toList();
 }
 
-String? vendorKindToJson(enums.VendorKind? vendorKind) {
-  return enums.$VendorKindMap[vendorKind];
+String? vendorKindToJson(VendorKind? vendorKind) {
+  return $VendorKindMap[vendorKind];
 }
 
-enums.VendorKind vendorKindFromJson(String? vendorKind) {
+VendorKind vendorKindFromJson(String? vendorKind) {
   if (vendorKind == null) {
-    return enums.VendorKind.swaggerGeneratedUnknown;
+    return VendorKind.swaggerGeneratedUnknown;
   }
 
-  return enums.$VendorKindMap.entries
+  return $VendorKindMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == vendorKind.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.VendorKind.swaggerGeneratedUnknown, ''))
+              const MapEntry(VendorKind.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> vendorKindListToJson(List<enums.VendorKind>? vendorKind) {
+List<String> vendorKindListToJson(List<VendorKind>? vendorKind) {
   if (vendorKind == null) {
     return [];
   }
 
-  return vendorKind.map((e) => enums.$VendorKindMap[e]!).toList();
+  return vendorKind.map((e) => $VendorKindMap[e]!).toList();
 }
 
-List<enums.VendorKind> vendorKindListFromJson(List? vendorKind) {
+List<VendorKind> vendorKindListFromJson(List? vendorKind) {
   if (vendorKind == null) {
     return [];
   }
@@ -10015,34 +10011,34 @@ List<enums.VendorKind> vendorKindListFromJson(List? vendorKind) {
   return vendorKind.map((e) => vendorKindFromJson(e.toString())).toList();
 }
 
-String? venueContactTypeToJson(enums.VenueContactType? venueContactType) {
-  return enums.$VenueContactTypeMap[venueContactType];
+String? venueContactTypeToJson(VenueContactType? venueContactType) {
+  return $VenueContactTypeMap[venueContactType];
 }
 
-enums.VenueContactType venueContactTypeFromJson(String? venueContactType) {
+VenueContactType venueContactTypeFromJson(String? venueContactType) {
   if (venueContactType == null) {
-    return enums.VenueContactType.swaggerGeneratedUnknown;
+    return VenueContactType.swaggerGeneratedUnknown;
   }
 
-  return enums.$VenueContactTypeMap.entries
+  return $VenueContactTypeMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == venueContactType.toLowerCase(),
           orElse: () => const MapEntry(
-              enums.VenueContactType.swaggerGeneratedUnknown, ''))
+              VenueContactType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> venueContactTypeListToJson(
-    List<enums.VenueContactType>? venueContactType) {
+    List<VenueContactType>? venueContactType) {
   if (venueContactType == null) {
     return [];
   }
 
-  return venueContactType.map((e) => enums.$VenueContactTypeMap[e]!).toList();
+  return venueContactType.map((e) => $VenueContactTypeMap[e]!).toList();
 }
 
-List<enums.VenueContactType> venueContactTypeListFromJson(
+List<VenueContactType> venueContactTypeListFromJson(
     List? venueContactType) {
   if (venueContactType == null) {
     return [];
@@ -10053,34 +10049,34 @@ List<enums.VenueContactType> venueContactTypeListFromJson(
       .toList();
 }
 
-String? venueNoteStatusToJson(enums.VenueNoteStatus? venueNoteStatus) {
-  return enums.$VenueNoteStatusMap[venueNoteStatus];
+String? venueNoteStatusToJson(VenueNoteStatus? venueNoteStatus) {
+  return $VenueNoteStatusMap[venueNoteStatus];
 }
 
-enums.VenueNoteStatus venueNoteStatusFromJson(String? venueNoteStatus) {
+VenueNoteStatus venueNoteStatusFromJson(String? venueNoteStatus) {
   if (venueNoteStatus == null) {
-    return enums.VenueNoteStatus.swaggerGeneratedUnknown;
+    return VenueNoteStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$VenueNoteStatusMap.entries
+  return $VenueNoteStatusMap.entries
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == venueNoteStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.VenueNoteStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(VenueNoteStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> venueNoteStatusListToJson(
-    List<enums.VenueNoteStatus>? venueNoteStatus) {
+    List<VenueNoteStatus>? venueNoteStatus) {
   if (venueNoteStatus == null) {
     return [];
   }
 
-  return venueNoteStatus.map((e) => enums.$VenueNoteStatusMap[e]!).toList();
+  return venueNoteStatus.map((e) => $VenueNoteStatusMap[e]!).toList();
 }
 
-List<enums.VenueNoteStatus> venueNoteStatusListFromJson(List? venueNoteStatus) {
+List<VenueNoteStatus> venueNoteStatusListFromJson(List? venueNoteStatus) {
   if (venueNoteStatus == null) {
     return [];
   }
@@ -10090,32 +10086,32 @@ List<enums.VenueNoteStatus> venueNoteStatusListFromJson(List? venueNoteStatus) {
       .toList();
 }
 
-String? venueStatusToJson(enums.VenueStatus? venueStatus) {
-  return enums.$VenueStatusMap[venueStatus];
+String? venueStatusToJson(VenueStatus? venueStatus) {
+  return $VenueStatusMap[venueStatus];
 }
 
-enums.VenueStatus venueStatusFromJson(String? venueStatus) {
+VenueStatus venueStatusFromJson(String? venueStatus) {
   if (venueStatus == null) {
-    return enums.VenueStatus.swaggerGeneratedUnknown;
+    return VenueStatus.swaggerGeneratedUnknown;
   }
 
-  return enums.$VenueStatusMap.entries
+  return $VenueStatusMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == venueStatus.toLowerCase(),
           orElse: () =>
-              const MapEntry(enums.VenueStatus.swaggerGeneratedUnknown, ''))
+              const MapEntry(VenueStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
-List<String> venueStatusListToJson(List<enums.VenueStatus>? venueStatus) {
+List<String> venueStatusListToJson(List<VenueStatus>? venueStatus) {
   if (venueStatus == null) {
     return [];
   }
 
-  return venueStatus.map((e) => enums.$VenueStatusMap[e]!).toList();
+  return venueStatus.map((e) => $VenueStatusMap[e]!).toList();
 }
 
-List<enums.VenueStatus> venueStatusListFromJson(List? venueStatus) {
+List<VenueStatus> venueStatusListFromJson(List? venueStatus) {
   if (venueStatus == null) {
     return [];
   }
