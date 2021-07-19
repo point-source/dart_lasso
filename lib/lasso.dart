@@ -3,6 +3,7 @@
 /// More dartdocs go here.
 library dart_lasso;
 
-export 'src/dart_lasso_base.dart';
+export 'generated_code/lasso.swagger.dart' hide Lasso;
+export 'src/lasso_base.dart' show Lasso;
 
 // TODO: Export any libraries intended for clients of this package.
