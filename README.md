@@ -1,7 +1,9 @@
-A Lasso API library for Dart developers.
+A Lasso API library for Dart developers. (https://lasso.io)
 
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+
+Code generated with [swagger_dart_code_generator](https://pub.dev/packages/swagger_dart_code_generator)
 
 ## Usage
 
@@ -10,9 +12,21 @@ A simple usage example:
 ```dart
 import 'package:lasso/lasso.dart';
 
-main() {
-  var lasso = new Lasso();
+Future main() async {
+  final client = lassoWithApiKey('my-api-key');
+
+  final crewResult = await client.crewList(limit: 10);
+
+  if (crewResult.statusCode != 200) {
+    ///Some network error
+    print(crewResult.error);
+  }
+
+  for (Crew c in crewResult.body?.results ?? []) {
+    print('${c.firstName} ${c.lastName}');
+  }
 }
+
 ```
 
 ## Features and bugs
