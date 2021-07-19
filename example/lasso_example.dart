@@ -1,7 +1,7 @@
 import 'package:lasso/lasso.dart';
 
 Future main() async {
-  final client = Lasso.create(apiKey: 'my-api-key');
+  final client = lassoWithApiKey('my-api-key');
 
   final crewResult = await client.crewList(limit: 10);
 
