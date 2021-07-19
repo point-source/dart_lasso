@@ -2820,8 +2820,7 @@ class CrewSettingsTravel {
       defaultValue: <CrewSettingsTravelPreferredAirlines>[])
   final List<CrewSettingsTravelPreferredAirlines>? preferredAirlines;
   @JsonKey(name: 'travel_seating_preference')
-  final CrewSettingsTravelTravelSeatingPreference?
-      travelSeatingPreference;
+  final CrewSettingsTravelTravelSeatingPreference? travelSeatingPreference;
   @JsonKey(
       name: 'meal_preferences',
       defaultValue: <CrewSettingsTravelMealPreferences>[])
@@ -7820,13 +7819,11 @@ extension $VenuesGet$ResponseExtension on VenuesGet$Response {
   }
 }
 
-String? accountUserRoleRoleToJson(
-    AccountUserRoleRole? accountUserRoleRole) {
+String? accountUserRoleRoleToJson(AccountUserRoleRole? accountUserRoleRole) {
   return $AccountUserRoleRoleMap[accountUserRoleRole];
 }
 
-AccountUserRoleRole accountUserRoleRoleFromJson(
-    String? accountUserRoleRole) {
+AccountUserRoleRole accountUserRoleRoleFromJson(String? accountUserRoleRole) {
   if (accountUserRoleRole == null) {
     return AccountUserRoleRole.swaggerGeneratedUnknown;
   }
@@ -7835,8 +7832,8 @@ AccountUserRoleRole accountUserRoleRoleFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == accountUserRoleRole.toLowerCase(),
-          orElse: () => const MapEntry(
-              AccountUserRoleRole.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(AccountUserRoleRole.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -7846,9 +7843,7 @@ List<String> accountUserRoleRoleListToJson(
     return [];
   }
 
-  return accountUserRoleRole
-      .map((e) => $AccountUserRoleRoleMap[e]!)
-      .toList();
+  return accountUserRoleRole.map((e) => $AccountUserRoleRoleMap[e]!).toList();
 }
 
 List<AccountUserRoleRole> accountUserRoleRoleListFromJson(
@@ -7878,8 +7873,8 @@ AccountUserRoleStatus accountUserRoleStatusFromJson(
           (element) =>
               element.value.toLowerCase() ==
               accountUserRoleStatus.toLowerCase(),
-          orElse: () => const MapEntry(
-              AccountUserRoleStatus.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(AccountUserRoleStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -7905,13 +7900,11 @@ List<AccountUserRoleStatus> accountUserRoleStatusListFromJson(
       .toList();
 }
 
-String? clientAddressStatusToJson(
-    ClientAddressStatus? clientAddressStatus) {
+String? clientAddressStatusToJson(ClientAddressStatus? clientAddressStatus) {
   return $ClientAddressStatusMap[clientAddressStatus];
 }
 
-ClientAddressStatus clientAddressStatusFromJson(
-    String? clientAddressStatus) {
+ClientAddressStatus clientAddressStatusFromJson(String? clientAddressStatus) {
   if (clientAddressStatus == null) {
     return ClientAddressStatus.swaggerGeneratedUnknown;
   }
@@ -7920,8 +7913,8 @@ ClientAddressStatus clientAddressStatusFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == clientAddressStatus.toLowerCase(),
-          orElse: () => const MapEntry(
-              ClientAddressStatus.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(ClientAddressStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -7931,9 +7924,7 @@ List<String> clientAddressStatusListToJson(
     return [];
   }
 
-  return clientAddressStatus
-      .map((e) => $ClientAddressStatusMap[e]!)
-      .toList();
+  return clientAddressStatus.map((e) => $ClientAddressStatusMap[e]!).toList();
 }
 
 List<ClientAddressStatus> clientAddressStatusListFromJson(
@@ -7960,8 +7951,8 @@ ClientAddressType clientAddressTypeFromJson(String? clientAddressType) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == clientAddressType.toLowerCase(),
-          orElse: () => const MapEntry(
-              ClientAddressType.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(ClientAddressType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -7974,8 +7965,7 @@ List<String> clientAddressTypeListToJson(
   return clientAddressType.map((e) => $ClientAddressTypeMap[e]!).toList();
 }
 
-List<ClientAddressType> clientAddressTypeListFromJson(
-    List? clientAddressType) {
+List<ClientAddressType> clientAddressTypeListFromJson(List? clientAddressType) {
   if (clientAddressType == null) {
     return [];
   }
@@ -7998,8 +7988,8 @@ ClientContactType clientContactTypeFromJson(String? clientContactType) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == clientContactType.toLowerCase(),
-          orElse: () => const MapEntry(
-              ClientContactType.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(ClientContactType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8012,8 +8002,7 @@ List<String> clientContactTypeListToJson(
   return clientContactType.map((e) => $ClientContactTypeMap[e]!).toList();
 }
 
-List<ClientContactType> clientContactTypeListFromJson(
-    List? clientContactType) {
+List<ClientContactType> clientContactTypeListFromJson(List? clientContactType) {
   if (clientContactType == null) {
     return [];
   }
@@ -8070,8 +8059,8 @@ CrewAddressStatus crewAddressStatusFromJson(String? crewAddressStatus) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewAddressStatus.toLowerCase(),
-          orElse: () => const MapEntry(
-              CrewAddressStatus.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(CrewAddressStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8084,8 +8073,7 @@ List<String> crewAddressStatusListToJson(
   return crewAddressStatus.map((e) => $CrewAddressStatusMap[e]!).toList();
 }
 
-List<CrewAddressStatus> crewAddressStatusListFromJson(
-    List? crewAddressStatus) {
+List<CrewAddressStatus> crewAddressStatusListFromJson(List? crewAddressStatus) {
   if (crewAddressStatus == null) {
     return [];
   }
@@ -8113,8 +8101,7 @@ CrewContactType crewContactTypeFromJson(String? crewContactType) {
       .key;
 }
 
-List<String> crewContactTypeListToJson(
-    List<CrewContactType>? crewContactType) {
+List<String> crewContactTypeListToJson(List<CrewContactType>? crewContactType) {
   if (crewContactType == null) {
     return [];
   }
@@ -8136,8 +8123,7 @@ String? crewPositionStatusToJson(CrewPositionStatus? crewPositionStatus) {
   return $CrewPositionStatusMap[crewPositionStatus];
 }
 
-CrewPositionStatus crewPositionStatusFromJson(
-    String? crewPositionStatus) {
+CrewPositionStatus crewPositionStatusFromJson(String? crewPositionStatus) {
   if (crewPositionStatus == null) {
     return CrewPositionStatus.swaggerGeneratedUnknown;
   }
@@ -8146,8 +8132,8 @@ CrewPositionStatus crewPositionStatusFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewPositionStatus.toLowerCase(),
-          orElse: () => const MapEntry(
-              CrewPositionStatus.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(CrewPositionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8157,9 +8143,7 @@ List<String> crewPositionStatusListToJson(
     return [];
   }
 
-  return crewPositionStatus
-      .map((e) => $CrewPositionStatusMap[e]!)
-      .toList();
+  return crewPositionStatus.map((e) => $CrewPositionStatusMap[e]!).toList();
 }
 
 List<CrewPositionStatus> crewPositionStatusListFromJson(
@@ -8173,8 +8157,7 @@ List<CrewPositionStatus> crewPositionStatusListFromJson(
       .toList();
 }
 
-String? crewPositionRateTypeToJson(
-    CrewPositionRateType? crewPositionRateType) {
+String? crewPositionRateTypeToJson(CrewPositionRateType? crewPositionRateType) {
   return $CrewPositionRateTypeMap[crewPositionRateType];
 }
 
@@ -8188,8 +8171,8 @@ CrewPositionRateType crewPositionRateTypeFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewPositionRateType.toLowerCase(),
-          orElse: () => const MapEntry(
-              CrewPositionRateType.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(CrewPositionRateType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8199,9 +8182,7 @@ List<String> crewPositionRateTypeListToJson(
     return [];
   }
 
-  return crewPositionRateType
-      .map((e) => $CrewPositionRateTypeMap[e]!)
-      .toList();
+  return crewPositionRateType.map((e) => $CrewPositionRateTypeMap[e]!).toList();
 }
 
 List<CrewPositionRateType> crewPositionRateTypeListFromJson(
@@ -8302,15 +8283,13 @@ List<CrewSettingsTravelGender> crewSettingsTravelGenderListFromJson(
 }
 
 String? crewSettingsTravelPreferredAirlinesToJson(
-    CrewSettingsTravelPreferredAirlines?
-        crewSettingsTravelPreferredAirlines) {
+    CrewSettingsTravelPreferredAirlines? crewSettingsTravelPreferredAirlines) {
   return $CrewSettingsTravelPreferredAirlinesMap[
       crewSettingsTravelPreferredAirlines];
 }
 
-CrewSettingsTravelPreferredAirlines
-    crewSettingsTravelPreferredAirlinesFromJson(
-        String? crewSettingsTravelPreferredAirlines) {
+CrewSettingsTravelPreferredAirlines crewSettingsTravelPreferredAirlinesFromJson(
+    String? crewSettingsTravelPreferredAirlines) {
   if (crewSettingsTravelPreferredAirlines == null) {
     return CrewSettingsTravelPreferredAirlines.swaggerGeneratedUnknown;
   }
@@ -8321,8 +8300,7 @@ CrewSettingsTravelPreferredAirlines
               element.value.toLowerCase() ==
               crewSettingsTravelPreferredAirlines.toLowerCase(),
           orElse: () => const MapEntry(
-              CrewSettingsTravelPreferredAirlines.swaggerGeneratedUnknown,
-              ''))
+              CrewSettingsTravelPreferredAirlines.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8370,8 +8348,7 @@ CrewSettingsTravelTravelSeatingPreference
               element.value.toLowerCase() ==
               crewSettingsTravelTravelSeatingPreference.toLowerCase(),
           orElse: () => const MapEntry(
-              CrewSettingsTravelTravelSeatingPreference
-                  .swaggerGeneratedUnknown,
+              CrewSettingsTravelTravelSeatingPreference.swaggerGeneratedUnknown,
               ''))
       .key;
 }
@@ -8402,14 +8379,13 @@ List<CrewSettingsTravelTravelSeatingPreference>
 }
 
 String? crewSettingsTravelMealPreferencesToJson(
-    CrewSettingsTravelMealPreferences?
-        crewSettingsTravelMealPreferences) {
-  return $CrewSettingsTravelMealPreferencesMap[crewSettingsTravelMealPreferences];
+    CrewSettingsTravelMealPreferences? crewSettingsTravelMealPreferences) {
+  return $CrewSettingsTravelMealPreferencesMap[
+      crewSettingsTravelMealPreferences];
 }
 
-CrewSettingsTravelMealPreferences
-    crewSettingsTravelMealPreferencesFromJson(
-        String? crewSettingsTravelMealPreferences) {
+CrewSettingsTravelMealPreferences crewSettingsTravelMealPreferencesFromJson(
+    String? crewSettingsTravelMealPreferences) {
   if (crewSettingsTravelMealPreferences == null) {
     return CrewSettingsTravelMealPreferences.swaggerGeneratedUnknown;
   }
@@ -8420,8 +8396,7 @@ CrewSettingsTravelMealPreferences
               element.value.toLowerCase() ==
               crewSettingsTravelMealPreferences.toLowerCase(),
           orElse: () => const MapEntry(
-              CrewSettingsTravelMealPreferences.swaggerGeneratedUnknown,
-              ''))
+              CrewSettingsTravelMealPreferences.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8481,9 +8456,8 @@ List<String> crewSettingsSmsCrewingStatusListToJson(
       .toList();
 }
 
-List<CrewSettingsSmsCrewingStatus>
-    crewSettingsSmsCrewingStatusListFromJson(
-        List? crewSettingsSmsCrewingStatus) {
+List<CrewSettingsSmsCrewingStatus> crewSettingsSmsCrewingStatusListFromJson(
+    List? crewSettingsSmsCrewingStatus) {
   if (crewSettingsSmsCrewingStatus == null) {
     return [];
   }
@@ -8497,8 +8471,7 @@ String? crewProfileURLTypeToJson(CrewProfileURLType? crewProfileURLType) {
   return $CrewProfileURLTypeMap[crewProfileURLType];
 }
 
-CrewProfileURLType crewProfileURLTypeFromJson(
-    String? crewProfileURLType) {
+CrewProfileURLType crewProfileURLTypeFromJson(String? crewProfileURLType) {
   if (crewProfileURLType == null) {
     return CrewProfileURLType.swaggerGeneratedUnknown;
   }
@@ -8507,8 +8480,8 @@ CrewProfileURLType crewProfileURLTypeFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewProfileURLType.toLowerCase(),
-          orElse: () => const MapEntry(
-              CrewProfileURLType.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(CrewProfileURLType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8518,9 +8491,7 @@ List<String> crewProfileURLTypeListToJson(
     return [];
   }
 
-  return crewProfileURLType
-      .map((e) => $CrewProfileURLTypeMap[e]!)
-      .toList();
+  return crewProfileURLType.map((e) => $CrewProfileURLTypeMap[e]!).toList();
 }
 
 List<CrewProfileURLType> crewProfileURLTypeListFromJson(
@@ -8552,8 +8523,7 @@ CrewNoteStatus crewNoteStatusFromJson(String? crewNoteStatus) {
       .key;
 }
 
-List<String> crewNoteStatusListToJson(
-    List<CrewNoteStatus>? crewNoteStatus) {
+List<String> crewNoteStatusListToJson(List<CrewNoteStatus>? crewNoteStatus) {
   if (crewNoteStatus == null) {
     return [];
   }
@@ -8583,8 +8553,7 @@ CrewStatus crewStatusFromJson(String? crewStatus) {
   return $CrewStatusMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == crewStatus.toLowerCase(),
-          orElse: () =>
-              const MapEntry(CrewStatus.swaggerGeneratedUnknown, ''))
+          orElse: () => const MapEntry(CrewStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8608,8 +8577,7 @@ String? crewClassificationToJson(CrewClassification? crewClassification) {
   return $CrewClassificationMap[crewClassification];
 }
 
-CrewClassification crewClassificationFromJson(
-    String? crewClassification) {
+CrewClassification crewClassificationFromJson(String? crewClassification) {
   if (crewClassification == null) {
     return CrewClassification.swaggerGeneratedUnknown;
   }
@@ -8618,8 +8586,8 @@ CrewClassification crewClassificationFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewClassification.toLowerCase(),
-          orElse: () => const MapEntry(
-              CrewClassification.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(CrewClassification.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8629,9 +8597,7 @@ List<String> crewClassificationListToJson(
     return [];
   }
 
-  return crewClassification
-      .map((e) => $CrewClassificationMap[e]!)
-      .toList();
+  return crewClassification.map((e) => $CrewClassificationMap[e]!).toList();
 }
 
 List<CrewClassification> crewClassificationListFromJson(
@@ -8679,8 +8645,7 @@ List<CrewRateType> crewRateTypeListFromJson(List? crewRateType) {
   return crewRateType.map((e) => crewRateTypeFromJson(e.toString())).toList();
 }
 
-String? crewTravelRateSourceToJson(
-    CrewTravelRateSource? crewTravelRateSource) {
+String? crewTravelRateSourceToJson(CrewTravelRateSource? crewTravelRateSource) {
   return $CrewTravelRateSourceMap[crewTravelRateSource];
 }
 
@@ -8694,8 +8659,8 @@ CrewTravelRateSource crewTravelRateSourceFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == crewTravelRateSource.toLowerCase(),
-          orElse: () => const MapEntry(
-              CrewTravelRateSource.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(CrewTravelRateSource.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8705,9 +8670,7 @@ List<String> crewTravelRateSourceListToJson(
     return [];
   }
 
-  return crewTravelRateSource
-      .map((e) => $CrewTravelRateSourceMap[e]!)
-      .toList();
+  return crewTravelRateSource.map((e) => $CrewTravelRateSourceMap[e]!).toList();
 }
 
 List<CrewTravelRateSource> crewTravelRateSourceListFromJson(
@@ -8773,8 +8736,7 @@ CrewRatingType crewRatingTypeFromJson(String? crewRatingType) {
       .key;
 }
 
-List<String> crewRatingTypeListToJson(
-    List<CrewRatingType>? crewRatingType) {
+List<String> crewRatingTypeListToJson(List<CrewRatingType>? crewRatingType) {
   if (crewRatingType == null) {
     return [];
   }
@@ -8848,8 +8810,8 @@ CustomFieldStatus customFieldStatusFromJson(String? customFieldStatus) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == customFieldStatus.toLowerCase(),
-          orElse: () => const MapEntry(
-              CustomFieldStatus.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(CustomFieldStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8862,8 +8824,7 @@ List<String> customFieldStatusListToJson(
   return customFieldStatus.map((e) => $CustomFieldStatusMap[e]!).toList();
 }
 
-List<CustomFieldStatus> customFieldStatusListFromJson(
-    List? customFieldStatus) {
+List<CustomFieldStatus> customFieldStatusListFromJson(List? customFieldStatus) {
   if (customFieldStatus == null) {
     return [];
   }
@@ -8873,13 +8834,11 @@ List<CustomFieldStatus> customFieldStatusListFromJson(
       .toList();
 }
 
-String? customFieldDataTypeToJson(
-    CustomFieldDataType? customFieldDataType) {
+String? customFieldDataTypeToJson(CustomFieldDataType? customFieldDataType) {
   return $CustomFieldDataTypeMap[customFieldDataType];
 }
 
-CustomFieldDataType customFieldDataTypeFromJson(
-    String? customFieldDataType) {
+CustomFieldDataType customFieldDataTypeFromJson(String? customFieldDataType) {
   if (customFieldDataType == null) {
     return CustomFieldDataType.swaggerGeneratedUnknown;
   }
@@ -8888,8 +8847,8 @@ CustomFieldDataType customFieldDataTypeFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == customFieldDataType.toLowerCase(),
-          orElse: () => const MapEntry(
-              CustomFieldDataType.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(CustomFieldDataType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -8899,9 +8858,7 @@ List<String> customFieldDataTypeListToJson(
     return [];
   }
 
-  return customFieldDataType
-      .map((e) => $CustomFieldDataTypeMap[e]!)
-      .toList();
+  return customFieldDataType.map((e) => $CustomFieldDataTypeMap[e]!).toList();
 }
 
 List<CustomFieldDataType> customFieldDataTypeListFromJson(
@@ -8976,8 +8933,7 @@ DivisionStatus divisionStatusFromJson(String? divisionStatus) {
       .key;
 }
 
-List<String> divisionStatusListToJson(
-    List<DivisionStatus>? divisionStatus) {
+List<String> divisionStatusListToJson(List<DivisionStatus>? divisionStatus) {
   if (divisionStatus == null) {
     return [];
   }
@@ -9011,8 +8967,8 @@ EventCollectionStatus eventCollectionStatusFromJson(
           (element) =>
               element.value.toLowerCase() ==
               eventCollectionStatus.toLowerCase(),
-          orElse: () => const MapEntry(
-              EventCollectionStatus.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(EventCollectionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9056,8 +9012,7 @@ EventNoteStatus eventNoteStatusFromJson(String? eventNoteStatus) {
       .key;
 }
 
-List<String> eventNoteStatusListToJson(
-    List<EventNoteStatus>? eventNoteStatus) {
+List<String> eventNoteStatusListToJson(List<EventNoteStatus>? eventNoteStatus) {
   if (eventNoteStatus == null) {
     return [];
   }
@@ -9088,8 +9043,8 @@ ScheduleEntryType scheduleEntryTypeFromJson(String? scheduleEntryType) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == scheduleEntryType.toLowerCase(),
-          orElse: () => const MapEntry(
-              ScheduleEntryType.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(ScheduleEntryType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9102,8 +9057,7 @@ List<String> scheduleEntryTypeListToJson(
   return scheduleEntryType.map((e) => $ScheduleEntryTypeMap[e]!).toList();
 }
 
-List<ScheduleEntryType> scheduleEntryTypeListFromJson(
-    List? scheduleEntryType) {
+List<ScheduleEntryType> scheduleEntryTypeListFromJson(List? scheduleEntryType) {
   if (scheduleEntryType == null) {
     return [];
   }
@@ -9113,13 +9067,11 @@ List<ScheduleEntryType> scheduleEntryTypeListFromJson(
       .toList();
 }
 
-String? eventPositionStatusToJson(
-    EventPositionStatus? eventPositionStatus) {
+String? eventPositionStatusToJson(EventPositionStatus? eventPositionStatus) {
   return $EventPositionStatusMap[eventPositionStatus];
 }
 
-EventPositionStatus eventPositionStatusFromJson(
-    String? eventPositionStatus) {
+EventPositionStatus eventPositionStatusFromJson(String? eventPositionStatus) {
   if (eventPositionStatus == null) {
     return EventPositionStatus.swaggerGeneratedUnknown;
   }
@@ -9128,8 +9080,8 @@ EventPositionStatus eventPositionStatusFromJson(
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == eventPositionStatus.toLowerCase(),
-          orElse: () => const MapEntry(
-              EventPositionStatus.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(EventPositionStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9139,9 +9091,7 @@ List<String> eventPositionStatusListToJson(
     return [];
   }
 
-  return eventPositionStatus
-      .map((e) => $EventPositionStatusMap[e]!)
-      .toList();
+  return eventPositionStatus.map((e) => $EventPositionStatusMap[e]!).toList();
 }
 
 List<EventPositionStatus> eventPositionStatusListFromJson(
@@ -9214,8 +9164,8 @@ EventPositionRateType eventPositionRateTypeFromJson(
           (element) =>
               element.value.toLowerCase() ==
               eventPositionRateType.toLowerCase(),
-          orElse: () => const MapEntry(
-              EventPositionRateType.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(EventPositionRateType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9421,14 +9371,12 @@ EventRosterPositionRemovalReason eventRosterPositionRemovalReasonFromJson(
               element.value.toLowerCase() ==
               eventRosterPositionRemovalReason.toLowerCase(),
           orElse: () => const MapEntry(
-              EventRosterPositionRemovalReason.swaggerGeneratedUnknown,
-              ''))
+              EventRosterPositionRemovalReason.swaggerGeneratedUnknown, ''))
       .key;
 }
 
 List<String> eventRosterPositionRemovalReasonListToJson(
-    List<EventRosterPositionRemovalReason>?
-        eventRosterPositionRemovalReason) {
+    List<EventRosterPositionRemovalReason>? eventRosterPositionRemovalReason) {
   if (eventRosterPositionRemovalReason == null) {
     return [];
   }
@@ -9461,7 +9409,8 @@ EventRosterPositionSerializerNoAnalyticsStatus
     eventRosterPositionSerializerNoAnalyticsStatusFromJson(
         String? eventRosterPositionSerializerNoAnalyticsStatus) {
   if (eventRosterPositionSerializerNoAnalyticsStatus == null) {
-    return EventRosterPositionSerializerNoAnalyticsStatus.swaggerGeneratedUnknown;
+    return EventRosterPositionSerializerNoAnalyticsStatus
+        .swaggerGeneratedUnknown;
   }
 
   return $EventRosterPositionSerializerNoAnalyticsStatusMap.entries
@@ -9536,8 +9485,7 @@ List<String> eventRosterPositionSerializerNoAnalyticsRateTypeListToJson(
   }
 
   return eventRosterPositionSerializerNoAnalyticsRateType
-      .map(
-          (e) => $EventRosterPositionSerializerNoAnalyticsRateTypeMap[e]!)
+      .map((e) => $EventRosterPositionSerializerNoAnalyticsRateTypeMap[e]!)
       .toList();
 }
 
@@ -9590,8 +9538,7 @@ List<String> eventRosterPositionSerializerNoAnalyticsRemovalReasonListToJson(
   }
 
   return eventRosterPositionSerializerNoAnalyticsRemovalReason
-      .map((e) =>
-          $EventRosterPositionSerializerNoAnalyticsRemovalReasonMap[e]!)
+      .map((e) => $EventRosterPositionSerializerNoAnalyticsRemovalReasonMap[e]!)
       .toList();
 }
 
@@ -9620,8 +9567,7 @@ EventStatus eventStatusFromJson(String? eventStatus) {
   return $EventStatusMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == eventStatus.toLowerCase(),
-          orElse: () =>
-              const MapEntry(EventStatus.swaggerGeneratedUnknown, ''))
+          orElse: () => const MapEntry(EventStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9702,8 +9648,7 @@ PositionStatus positionStatusFromJson(String? positionStatus) {
       .key;
 }
 
-List<String> positionStatusListToJson(
-    List<PositionStatus>? positionStatus) {
+List<String> positionStatusListToJson(List<PositionStatus>? positionStatus) {
   if (positionStatus == null) {
     return [];
   }
@@ -9777,8 +9722,8 @@ PositionRate1Type positionRate1TypeFromJson(String? positionRate1Type) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == positionRate1Type.toLowerCase(),
-          orElse: () => const MapEntry(
-              PositionRate1Type.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(PositionRate1Type.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9791,8 +9736,7 @@ List<String> positionRate1TypeListToJson(
   return positionRate1Type.map((e) => $PositionRate1TypeMap[e]!).toList();
 }
 
-List<PositionRate1Type> positionRate1TypeListFromJson(
-    List? positionRate1Type) {
+List<PositionRate1Type> positionRate1TypeListFromJson(List? positionRate1Type) {
   if (positionRate1Type == null) {
     return [];
   }
@@ -9815,8 +9759,8 @@ PositionRate2Type positionRate2TypeFromJson(String? positionRate2Type) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == positionRate2Type.toLowerCase(),
-          orElse: () => const MapEntry(
-              PositionRate2Type.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(PositionRate2Type.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9829,8 +9773,7 @@ List<String> positionRate2TypeListToJson(
   return positionRate2Type.map((e) => $PositionRate2TypeMap[e]!).toList();
 }
 
-List<PositionRate2Type> positionRate2TypeListFromJson(
-    List? positionRate2Type) {
+List<PositionRate2Type> positionRate2TypeListFromJson(List? positionRate2Type) {
   if (positionRate2Type == null) {
     return [];
   }
@@ -9853,8 +9796,8 @@ PositionRate3Type positionRate3TypeFromJson(String? positionRate3Type) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == positionRate3Type.toLowerCase(),
-          orElse: () => const MapEntry(
-              PositionRate3Type.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(PositionRate3Type.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9867,8 +9810,7 @@ List<String> positionRate3TypeListToJson(
   return positionRate3Type.map((e) => $PositionRate3TypeMap[e]!).toList();
 }
 
-List<PositionRate3Type> positionRate3TypeListFromJson(
-    List? positionRate3Type) {
+List<PositionRate3Type> positionRate3TypeListFromJson(List? positionRate3Type) {
   if (positionRate3Type == null) {
     return [];
   }
@@ -9890,8 +9832,7 @@ TagColor tagColorFromJson(String? tagColor) {
   return $TagColorMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == tagColor.toLowerCase(),
-          orElse: () =>
-              const MapEntry(TagColor.swaggerGeneratedUnknown, ''))
+          orElse: () => const MapEntry(TagColor.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9923,8 +9864,7 @@ TagStatus tagStatusFromJson(String? tagStatus) {
   return $TagStatusMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == tagStatus.toLowerCase(),
-          orElse: () =>
-              const MapEntry(TagStatus.swaggerGeneratedUnknown, ''))
+          orElse: () => const MapEntry(TagStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -9990,8 +9930,7 @@ VendorKind vendorKindFromJson(String? vendorKind) {
   return $VendorKindMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == vendorKind.toLowerCase(),
-          orElse: () =>
-              const MapEntry(VendorKind.swaggerGeneratedUnknown, ''))
+          orElse: () => const MapEntry(VendorKind.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -10024,8 +9963,8 @@ VenueContactType venueContactTypeFromJson(String? venueContactType) {
       .firstWhere(
           (element) =>
               element.value.toLowerCase() == venueContactType.toLowerCase(),
-          orElse: () => const MapEntry(
-              VenueContactType.swaggerGeneratedUnknown, ''))
+          orElse: () =>
+              const MapEntry(VenueContactType.swaggerGeneratedUnknown, ''))
       .key;
 }
 
@@ -10038,8 +9977,7 @@ List<String> venueContactTypeListToJson(
   return venueContactType.map((e) => $VenueContactTypeMap[e]!).toList();
 }
 
-List<VenueContactType> venueContactTypeListFromJson(
-    List? venueContactType) {
+List<VenueContactType> venueContactTypeListFromJson(List? venueContactType) {
   if (venueContactType == null) {
     return [];
   }
@@ -10067,8 +10005,7 @@ VenueNoteStatus venueNoteStatusFromJson(String? venueNoteStatus) {
       .key;
 }
 
-List<String> venueNoteStatusListToJson(
-    List<VenueNoteStatus>? venueNoteStatus) {
+List<String> venueNoteStatusListToJson(List<VenueNoteStatus>? venueNoteStatus) {
   if (venueNoteStatus == null) {
     return [];
   }
@@ -10098,8 +10035,7 @@ VenueStatus venueStatusFromJson(String? venueStatus) {
   return $VenueStatusMap.entries
       .firstWhere(
           (element) => element.value.toLowerCase() == venueStatus.toLowerCase(),
-          orElse: () =>
-              const MapEntry(VenueStatus.swaggerGeneratedUnknown, ''))
+          orElse: () => const MapEntry(VenueStatus.swaggerGeneratedUnknown, ''))
       .key;
 }
 
