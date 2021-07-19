@@ -3,14 +3,10 @@ import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    Awesome awesome;
+    Lasso lasso = lassoWithApiKey('my-api-key');
 
-    setUp(() {
-      awesome = Awesome();
-    });
-
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
+    test('Create instance with API Key', () {
+      expect(lasso, isA<Lasso>());
     });
   });
 }
