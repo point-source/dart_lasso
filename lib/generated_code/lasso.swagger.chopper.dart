@@ -139,9 +139,12 @@ class _$Lasso extends Lasso {
       'limit': limit,
       'offset': offset
     };
-    final $request = Request('GET', $url, client.baseUrl, parameters: $params);
-    return client.send<ClientAddressesGet$Response,
-        ClientAddressesGet$Response>($request);
+    final $request =
+        Request('GET', $url, this.client.baseUrl, parameters: $params);
+    return this
+        .client
+        .send<ClientAddressesGet$Response, ClientAddressesGet$Response>(
+            $request);
   }
 
   @override
@@ -205,8 +208,10 @@ class _$Lasso extends Lasso {
       'limit': limit,
       'offset': offset
     };
-    final $request = Request('GET', $url, client.baseUrl, parameters: $params);
-    return client
+    final $request =
+        Request('GET', $url, this.client.baseUrl, parameters: $params);
+    return this
+        .client
         .send<ClientContactsGet$Response, ClientContactsGet$Response>($request);
   }
 
