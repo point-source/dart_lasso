@@ -1,4 +1,4 @@
-import 'package:dart_rentalworks/dart_rentalworks.dart';
+import 'package:lasso/lasso.dart';
 import 'package:test/test.dart';
 
 void main() {
