@@ -784,7 +784,7 @@ Crew _$CrewFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$CrewToJson(Crew instance) => <String, dynamic>{
-      'legal_last_name': instance.legalLastName,
+      'id': instance.id,
       'db_date_created': instance.dbDateCreated?.toIso8601String(),
       'db_date_updated': instance.dbDateUpdated?.toIso8601String(),
       'status': crewStatusToJson(instance.status),
@@ -797,7 +797,7 @@ Map<String, dynamic> _$CrewToJson(Crew instance) => <String, dynamic>{
       'contacts': instance.contacts?.map((e) => e.toJson()).toList(),
       'classification': crewClassificationToJson(instance.classification),
       'legal_first_name': instance.legalFirstName,
-      'id': instance.id,
+      'legal_last_name': instance.legalLastName,
       'us_state_of_residence': instance.usStateOfResidence,
       'country': instance.country,
       'rate': instance.rate,
@@ -810,7 +810,7 @@ Map<String, dynamic> _$CrewToJson(Crew instance) => <String, dynamic>{
       'project_manager': instance.projectManager,
       'code': instance.code,
       'external_code': instance.externalCode,
-      'payroll_group': instance.payrollGroup,
+      'valid_passport': instance.validPassport,
       'shirt_size': _$CrewShirtSizeEnumMap[instance.shirtSize],
       'date_onboarded': _dateToJson(instance.dateOnboarded),
       'note': instance.note,
@@ -825,7 +825,7 @@ Map<String, dynamic> _$CrewToJson(Crew instance) => <String, dynamic>{
       'nearest_airport': instance.nearestAirport,
       'tags': instance.tags?.map((e) => e.toJson()).toList(),
       'local_markets': instance.localMarkets,
-      'valid_passport': instance.validPassport,
+      'payroll_group': instance.payrollGroup,
     };
 
 const _$CrewRateTypeEnumMap = {

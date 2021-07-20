@@ -22,9 +22,9 @@ abstract class Lasso extends ChopperService {
     }
 
     final newClient = ChopperClient(
-        services: [_$Lasso()],
-        converter: JsonSerializableConverter(),
-        baseUrl: 'https://fuse.lasso.io/api/v1');
+      services: [_$Lasso()],
+      converter: chopper.JsonConverter(), /*baseUrl: YOUR_BASE_URL*/
+    );
     return _$Lasso(newClient);
   }
 

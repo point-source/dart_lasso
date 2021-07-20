@@ -1,6 +1,6 @@
 name: lasso
 description: A Lasso (crewing platform) API library for Dart developers. (https://lasso.io)
-version: 1.0.0
+version: 1.1.0
 homepage: https://github.com/point-source/dart_lasso
 
 environment:
