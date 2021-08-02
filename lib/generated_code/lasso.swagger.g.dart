@@ -123,7 +123,7 @@ ClientAddress _$ClientAddressFromJson(Map<String, dynamic> json) {
     dbDateUpdated: json['db_date_updated'] == null
         ? null
         : DateTime.parse(json['db_date_updated'] as String),
-    client: json['client'] as int?,
+    $client: json['client'] as int?,
     status: clientAddressStatusFromJson(json['status'] as String?),
     type: clientAddressTypeFromJson(json['type'] as String?),
     contactName: json['contact_name'] as String?,
@@ -145,7 +145,7 @@ Map<String, dynamic> _$ClientAddressToJson(ClientAddress instance) =>
       'id': instance.id,
       'db_date_created': instance.dbDateCreated?.toIso8601String(),
       'db_date_updated': instance.dbDateUpdated?.toIso8601String(),
-      'client': instance.client,
+      'client': instance.$client,
       'status': clientAddressStatusToJson(instance.status),
       'type': clientAddressTypeToJson(instance.type),
       'contact_name': instance.contactName,
@@ -171,7 +171,7 @@ ClientContact _$ClientContactFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['db_date_updated'] as String),
     type: clientContactTypeFromJson(json['type'] as String?),
-    client: json['client'] as int?,
+    $client: json['client'] as int?,
     firstName: json['first_name'] as String?,
     lastName: json['last_name'] as String?,
     email: json['email'] as String?,
@@ -189,7 +189,7 @@ Map<String, dynamic> _$ClientContactToJson(ClientContact instance) =>
       'db_date_created': instance.dbDateCreated?.toIso8601String(),
       'db_date_updated': instance.dbDateUpdated?.toIso8601String(),
       'type': clientContactTypeToJson(instance.type),
-      'client': instance.client,
+      'client': instance.$client,
       'first_name': instance.firstName,
       'last_name': instance.lastName,
       'email': instance.email,
@@ -330,10 +330,8 @@ CrewPosition _$CrewPositionFromJson(Map<String, dynamic> json) {
         : DateTime.parse(json['date_approved'] as String),
     averageRating: (json['average_rating'] as num?)?.toDouble(),
     rate: json['rate'] as String?,
-    rateType:
-        _$enumDecodeNullable(_$CrewPositionRateTypeEnumMap, json['rate_type']),
-    rateSource: _$enumDecodeNullable(
-        _$CrewPositionRateSourceEnumMap, json['rate_source']),
+    rateType: crewPositionRateTypeFromJson(json['rate_type'] as String?),
+    rateSource: crewPositionRateSourceFromJson(json['rate_source'] as String?),
     rateCurrency: json['rate_currency'] as String?,
   );
 }
@@ -350,63 +348,10 @@ Map<String, dynamic> _$CrewPositionToJson(CrewPosition instance) =>
       'date_approved': instance.dateApproved?.toIso8601String(),
       'average_rating': instance.averageRating,
       'rate': instance.rate,
-      'rate_type': _$CrewPositionRateTypeEnumMap[instance.rateType],
-      'rate_source': _$CrewPositionRateSourceEnumMap[instance.rateSource],
+      'rate_type': crewPositionRateTypeToJson(instance.rateType),
+      'rate_source': crewPositionRateSourceToJson(instance.rateSource),
       'rate_currency': instance.rateCurrency,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$CrewPositionRateTypeEnumMap = {
-  CrewPositionRateType.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  CrewPositionRateType.hourly: 'hourly',
-  CrewPositionRateType.daily: 'daily',
-  CrewPositionRateType.weekly: 'weekly',
-};
-
-const _$CrewPositionRateSourceEnumMap = {
-  CrewPositionRateSource.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  CrewPositionRateSource.custom: 'custom',
-  CrewPositionRateSource.$default: 'default',
-  CrewPositionRateSource.standard1: 'standard_1',
-  CrewPositionRateSource.standard2: 'standard_2',
-  CrewPositionRateSource.standard3: 'standard_3',
-};
 
 Passport _$PassportFromJson(Map<String, dynamic> json) {
   return Passport(
@@ -431,19 +376,12 @@ CrewSettingsTravel _$CrewSettingsTravelFromJson(Map<String, dynamic> json) {
     rentalCars: json['rental_cars'],
     redress: json['redress'] as String?,
     tsaPrecheck: json['tsa_precheck'] as String?,
-    preferredAirlines: (json['preferred_airlines'] as List<dynamic>?)
-            ?.map((e) =>
-                _$enumDecode(_$CrewSettingsTravelPreferredAirlinesEnumMap, e))
-            .toList() ??
-        [],
-    travelSeatingPreference: _$enumDecodeNullable(
-        _$CrewSettingsTravelTravelSeatingPreferenceEnumMap,
-        json['travel_seating_preference']),
-    mealPreferences: (json['meal_preferences'] as List<dynamic>?)
-            ?.map((e) =>
-                _$enumDecode(_$CrewSettingsTravelMealPreferencesEnumMap, e))
-            .toList() ??
-        [],
+    preferredAirlines: crewSettingsTravelPreferredAirlinesListFromJson(
+        json['preferred_airlines'] as List?),
+    travelSeatingPreference: crewSettingsTravelTravelSeatingPreferenceFromJson(
+        json['travel_seating_preference'] as String?),
+    mealPreferences: crewSettingsTravelMealPreferencesListFromJson(
+        json['meal_preferences'] as List?),
     passportList: (json['passport_list'] as List<dynamic>?)
             ?.map((e) => Passport.fromJson(e as Map<String, dynamic>))
             .toList() ??
@@ -460,79 +398,15 @@ Map<String, dynamic> _$CrewSettingsTravelToJson(CrewSettingsTravel instance) =>
       'rental_cars': instance.rentalCars,
       'redress': instance.redress,
       'tsa_precheck': instance.tsaPrecheck,
-      'preferred_airlines': instance.preferredAirlines
-          ?.map((e) => _$CrewSettingsTravelPreferredAirlinesEnumMap[e])
-          .toList(),
+      'preferred_airlines': crewSettingsTravelPreferredAirlinesListToJson(
+          instance.preferredAirlines),
       'travel_seating_preference':
-          _$CrewSettingsTravelTravelSeatingPreferenceEnumMap[
-              instance.travelSeatingPreference],
-      'meal_preferences': instance.mealPreferences
-          ?.map((e) => _$CrewSettingsTravelMealPreferencesEnumMap[e])
-          .toList(),
+          crewSettingsTravelTravelSeatingPreferenceToJson(
+              instance.travelSeatingPreference),
+      'meal_preferences':
+          crewSettingsTravelMealPreferencesListToJson(instance.mealPreferences),
       'passport_list': instance.passportList?.map((e) => e.toJson()).toList(),
     };
-
-const _$CrewSettingsTravelPreferredAirlinesEnumMap = {
-  CrewSettingsTravelPreferredAirlines.swaggerGeneratedUnknown:
-      'swaggerGeneratedUnknown',
-  CrewSettingsTravelPreferredAirlines.aerLingus: 'Aer_Lingus',
-  CrewSettingsTravelPreferredAirlines.aeromexico: 'Aeromexico',
-  CrewSettingsTravelPreferredAirlines.airCanada: 'Air_Canada',
-  CrewSettingsTravelPreferredAirlines.airFrance: 'Air_France',
-  CrewSettingsTravelPreferredAirlines.airIndia: 'Air_India',
-  CrewSettingsTravelPreferredAirlines.alaskaAirlines: 'Alaska_Airlines',
-  CrewSettingsTravelPreferredAirlines.alitalia: 'Alitalia',
-  CrewSettingsTravelPreferredAirlines.allNipponAirways: 'All_Nippon_Airways',
-  CrewSettingsTravelPreferredAirlines.americanAirlines: 'American_Airlines',
-  CrewSettingsTravelPreferredAirlines.asianaAirlines: 'Asiana_Airlines',
-  CrewSettingsTravelPreferredAirlines.avianca: 'Avianca',
-  CrewSettingsTravelPreferredAirlines.britishAirways: 'British_Airways',
-  CrewSettingsTravelPreferredAirlines.caribbeanAirlines: 'Caribbean_Airlines',
-  CrewSettingsTravelPreferredAirlines.copaAirlines: 'Copa_Airlines',
-  CrewSettingsTravelPreferredAirlines.delta: 'Delta',
-  CrewSettingsTravelPreferredAirlines.emiratesAirlines: 'Emirates_Airlines',
-  CrewSettingsTravelPreferredAirlines.frontier: 'Frontier',
-  CrewSettingsTravelPreferredAirlines.hawaiianAirlines: 'Hawaiian_Airlines',
-  CrewSettingsTravelPreferredAirlines.iberia: 'Iberia',
-  CrewSettingsTravelPreferredAirlines.jetblue: 'jetBlue',
-  CrewSettingsTravelPreferredAirlines.klm: 'KLM',
-  CrewSettingsTravelPreferredAirlines.koreanAir: 'Korean_Air',
-  CrewSettingsTravelPreferredAirlines.lanAirlines: 'Lan_Airlines',
-  CrewSettingsTravelPreferredAirlines.lotAirlines: 'LOT_Airlines',
-  CrewSettingsTravelPreferredAirlines.lufthansa: 'Lufthansa',
-  CrewSettingsTravelPreferredAirlines.porterAirlines: 'Porter_Airlines',
-  CrewSettingsTravelPreferredAirlines.qantas: 'Qantas',
-  CrewSettingsTravelPreferredAirlines.sas: 'SAS',
-  CrewSettingsTravelPreferredAirlines.singaporeAirlines: 'Singapore_Airlines',
-  CrewSettingsTravelPreferredAirlines.southwestAirlines: 'Southwest_Airlines',
-  CrewSettingsTravelPreferredAirlines.spirit: 'Spirit',
-  CrewSettingsTravelPreferredAirlines.sunCountry: 'Sun_Country',
-  CrewSettingsTravelPreferredAirlines.swiss: 'Swiss',
-  CrewSettingsTravelPreferredAirlines.tacaInternational: 'Taca_International',
-  CrewSettingsTravelPreferredAirlines.tamMeridionais: 'Tam_Meridionais',
-  CrewSettingsTravelPreferredAirlines.turkishAirlines: 'Turkish_Airlines',
-  CrewSettingsTravelPreferredAirlines.united: 'United',
-  CrewSettingsTravelPreferredAirlines.virginAmerica: 'Virgin_America',
-  CrewSettingsTravelPreferredAirlines.virginAtlantic: 'Virgin_Atlantic',
-  CrewSettingsTravelPreferredAirlines.westjet: 'WestJet',
-};
-
-const _$CrewSettingsTravelTravelSeatingPreferenceEnumMap = {
-  CrewSettingsTravelTravelSeatingPreference.swaggerGeneratedUnknown:
-      'swaggerGeneratedUnknown',
-  CrewSettingsTravelTravelSeatingPreference.window: 'window',
-  CrewSettingsTravelTravelSeatingPreference.aisle: 'aisle',
-};
-
-const _$CrewSettingsTravelMealPreferencesEnumMap = {
-  CrewSettingsTravelMealPreferences.swaggerGeneratedUnknown:
-      'swaggerGeneratedUnknown',
-  CrewSettingsTravelMealPreferences.vegetarian: 'Vegetarian',
-  CrewSettingsTravelMealPreferences.vegan: 'Vegan',
-  CrewSettingsTravelMealPreferences.glutenFree: 'Gluten_Free',
-  CrewSettingsTravelMealPreferences.nutAllergy: 'Nut_Allergy',
-  CrewSettingsTravelMealPreferences.dairyAllergy: 'Dairy_Allergy',
-};
 
 CrewSettings _$CrewSettingsFromJson(Map<String, dynamic> json) {
   return CrewSettings(
@@ -552,8 +426,8 @@ CrewSettings _$CrewSettingsFromJson(Map<String, dynamic> json) {
     dateOfBirth: json['date_of_birth'] == null
         ? null
         : DateTime.parse(json['date_of_birth'] as String),
-    smsCrewingStatus: _$enumDecodeNullable(
-        _$CrewSettingsSmsCrewingStatusEnumMap, json['sms_crewing_status']),
+    smsCrewingStatus: crewSettingsSmsCrewingStatusFromJson(
+        json['sms_crewing_status'] as String?),
   );
 }
 
@@ -568,17 +442,8 @@ Map<String, dynamic> _$CrewSettingsToJson(CrewSettings instance) =>
       'travel': instance.travel?.toJson(),
       'date_of_birth': _dateToJson(instance.dateOfBirth),
       'sms_crewing_status':
-          _$CrewSettingsSmsCrewingStatusEnumMap[instance.smsCrewingStatus],
+          crewSettingsSmsCrewingStatusToJson(instance.smsCrewingStatus),
     };
-
-const _$CrewSettingsSmsCrewingStatusEnumMap = {
-  CrewSettingsSmsCrewingStatus.swaggerGeneratedUnknown:
-      'swaggerGeneratedUnknown',
-  CrewSettingsSmsCrewingStatus.disabled: 'disabled',
-  CrewSettingsSmsCrewingStatus.pending: 'pending',
-  CrewSettingsSmsCrewingStatus.confirmed: 'confirmed',
-  CrewSettingsSmsCrewingStatus.declined: 'declined',
-};
 
 CrewProfileURL _$CrewProfileURLFromJson(Map<String, dynamic> json) {
   return CrewProfileURL(
@@ -734,17 +599,17 @@ Crew _$CrewFromJson(Map<String, dynamic> json) {
     usStateOfResidence: json['us_state_of_residence'] as String?,
     country: json['country'] as String?,
     rate: json['rate'] as String?,
-    rateType: _$enumDecodeNullable(_$CrewRateTypeEnumMap, json['rate_type']),
+    rateType: crewRateTypeFromJson(json['rate_type'] as String?),
     rateCurrency: json['rate_currency'] as String?,
     travelRate: json['travel_rate'] as String?,
-    travelRateSource: _$enumDecodeNullable(
-        _$CrewTravelRateSourceEnumMap, json['travel_rate_source']),
+    travelRateSource:
+        crewTravelRateSourceFromJson(json['travel_rate_source'] as String?),
     overallRating: (json['overall_rating'] as num?)?.toDouble(),
     projectManager: json['project_manager'] as bool?,
     code: json['code'] as String?,
     externalCode: json['external_code'] as String?,
     validPassport: json['valid_passport'] as bool?,
-    shirtSize: _$enumDecodeNullable(_$CrewShirtSizeEnumMap, json['shirt_size']),
+    shirtSize: crewShirtSizeFromJson(json['shirt_size'] as String?),
     dateOnboarded: json['date_onboarded'] == null
         ? null
         : DateTime.parse(json['date_onboarded'] as String),
@@ -801,17 +666,17 @@ Map<String, dynamic> _$CrewToJson(Crew instance) => <String, dynamic>{
       'us_state_of_residence': instance.usStateOfResidence,
       'country': instance.country,
       'rate': instance.rate,
-      'rate_type': _$CrewRateTypeEnumMap[instance.rateType],
+      'rate_type': crewRateTypeToJson(instance.rateType),
       'rate_currency': instance.rateCurrency,
       'travel_rate': instance.travelRate,
       'travel_rate_source':
-          _$CrewTravelRateSourceEnumMap[instance.travelRateSource],
+          crewTravelRateSourceToJson(instance.travelRateSource),
       'overall_rating': instance.overallRating,
       'project_manager': instance.projectManager,
       'code': instance.code,
       'external_code': instance.externalCode,
       'valid_passport': instance.validPassport,
-      'shirt_size': _$CrewShirtSizeEnumMap[instance.shirtSize],
+      'shirt_size': crewShirtSizeToJson(instance.shirtSize),
       'date_onboarded': _dateToJson(instance.dateOnboarded),
       'note': instance.note,
       'positions': instance.positions?.map((e) => e.toJson()).toList(),
@@ -827,32 +692,6 @@ Map<String, dynamic> _$CrewToJson(Crew instance) => <String, dynamic>{
       'local_markets': instance.localMarkets,
       'payroll_group': instance.payrollGroup,
     };
-
-const _$CrewRateTypeEnumMap = {
-  CrewRateType.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  CrewRateType.hourly: 'hourly',
-  CrewRateType.daily: 'daily',
-  CrewRateType.weekly: 'weekly',
-};
-
-const _$CrewTravelRateSourceEnumMap = {
-  CrewTravelRateSource.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  CrewTravelRateSource.custom: 'custom',
-  CrewTravelRateSource.$default: 'default',
-};
-
-const _$CrewShirtSizeEnumMap = {
-  CrewShirtSize.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  CrewShirtSize.xs: 'XS',
-  CrewShirtSize.s: 'S',
-  CrewShirtSize.m: 'M',
-  CrewShirtSize.l: 'L',
-  CrewShirtSize.xl: 'XL',
-  CrewShirtSize.xxl: 'XXL',
-  CrewShirtSize.xxxl: 'XXXL',
-  CrewShirtSize.value_4xl: '4XL',
-  CrewShirtSize.value_5xl: '5XL',
-};
 
 CrewRating _$CrewRatingFromJson(Map<String, dynamic> json) {
   return CrewRating(
@@ -908,8 +747,7 @@ CustomFieldResponse _$CustomFieldResponseFromJson(Map<String, dynamic> json) {
         : DateTime.parse(json['db_date_updated'] as String),
     crew: json['crew'] as int?,
     question: json['question'] as int?,
-    dataType: _$enumDecodeNullable(
-        _$CustomFieldResponseDataTypeEnumMap, json['data_type']),
+    dataType: customFieldResponseDataTypeFromJson(json['data_type'] as String?),
     responseData: json['response_data'] as String?,
   );
 }
@@ -922,22 +760,9 @@ Map<String, dynamic> _$CustomFieldResponseToJson(
       'db_date_updated': instance.dbDateUpdated?.toIso8601String(),
       'crew': instance.crew,
       'question': instance.question,
-      'data_type': _$CustomFieldResponseDataTypeEnumMap[instance.dataType],
+      'data_type': customFieldResponseDataTypeToJson(instance.dataType),
       'response_data': instance.responseData,
     };
-
-const _$CustomFieldResponseDataTypeEnumMap = {
-  CustomFieldResponseDataType.swaggerGeneratedUnknown:
-      'swaggerGeneratedUnknown',
-  CustomFieldResponseDataType.text: 'text',
-  CustomFieldResponseDataType.number: 'number',
-  CustomFieldResponseDataType.date: 'date',
-  CustomFieldResponseDataType.phone: 'phone',
-  CustomFieldResponseDataType.select: 'select',
-  CustomFieldResponseDataType.multiselect: 'multiselect',
-  CustomFieldResponseDataType.file: 'file',
-  CustomFieldResponseDataType.secureText: 'secure_text',
-};
 
 CustomField _$CustomFieldFromJson(Map<String, dynamic> json) {
   return CustomField(
@@ -952,8 +777,7 @@ CustomField _$CustomFieldFromJson(Map<String, dynamic> json) {
     term: json['term'] as String?,
     label: json['label'] as String?,
     description: json['description'] as String?,
-    dataType:
-        _$enumDecodeNullable(_$CustomFieldDataTypeEnumMap, json['data_type']),
+    dataType: customFieldDataTypeFromJson(json['data_type'] as String?),
     registration:
         customFieldRegistrationFromJson(json['registration'] as String?),
     requiredForImport: json['required_for_import'] as bool?,
@@ -980,7 +804,7 @@ Map<String, dynamic> _$CustomFieldToJson(CustomField instance) =>
       'term': instance.term,
       'label': instance.label,
       'description': instance.description,
-      'data_type': _$CustomFieldDataTypeEnumMap[instance.dataType],
+      'data_type': customFieldDataTypeToJson(instance.dataType),
       'registration': customFieldRegistrationToJson(instance.registration),
       'required_for_import': instance.requiredForImport,
       'required_for_crewing': instance.requiredForCrewing,
@@ -993,18 +817,6 @@ Map<String, dynamic> _$CustomFieldToJson(CustomField instance) =>
       'section': instance.section,
       'positions': instance.positions,
     };
-
-const _$CustomFieldDataTypeEnumMap = {
-  CustomFieldDataType.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  CustomFieldDataType.text: 'text',
-  CustomFieldDataType.number: 'number',
-  CustomFieldDataType.date: 'date',
-  CustomFieldDataType.phone: 'phone',
-  CustomFieldDataType.select: 'select',
-  CustomFieldDataType.multiselect: 'multiselect',
-  CustomFieldDataType.file: 'file',
-  CustomFieldDataType.secureText: 'secure_text',
-};
 
 Division _$DivisionFromJson(Map<String, dynamic> json) {
   return Division(
@@ -1085,7 +897,7 @@ EventCollection _$EventCollectionFromJson(Map<String, dynamic> json) {
     description: json['description'] as String?,
     events:
         (json['events'] as List<dynamic>?)?.map((e) => e as int).toList() ?? [],
-    client: json['client'] as int?,
+    $client: json['client'] as int?,
     hideName: json['hide_name'] as bool?,
   );
 }
@@ -1103,7 +915,7 @@ Map<String, dynamic> _$EventCollectionToJson(EventCollection instance) =>
       'status': eventCollectionStatusToJson(instance.status),
       'description': instance.description,
       'events': instance.events,
-      'client': instance.client,
+      'client': instance.$client,
       'hide_name': instance.hideName,
     };
 
@@ -1243,15 +1055,14 @@ EventPosition _$EventPositionFromJson(Map<String, dynamic> json) {
     label: json['label'] as String?,
     status: eventPositionStatusFromJson(json['status'] as String?),
     sequence: json['sequence'] as int?,
-    rateSetting: _$enumDecodeNullable(
-        _$EventPositionRateSettingEnumMap, json['rate_setting']),
+    rateSetting:
+        eventPositionRateSettingFromJson(json['rate_setting'] as String?),
     rate: json['rate'] as String?,
     rateCurrency: json['rate_currency'] as String?,
-    rateType:
-        _$enumDecodeNullable(_$EventPositionRateTypeEnumMap, json['rate_type']),
+    rateType: eventPositionRateTypeFromJson(json['rate_type'] as String?),
     billedRate: json['billed_rate'] as String?,
-    billedRateType: _$enumDecodeNullable(
-        _$EventPositionBilledRateTypeEnumMap, json['billed_rate_type']),
+    billedRateType: eventPositionBilledRateTypeFromJson(
+        json['billed_rate_type'] as String?),
     scheduleBegin: json['schedule_begin'] == null
         ? null
         : DateTime.parse(json['schedule_begin'] as String),
@@ -1285,13 +1096,13 @@ Map<String, dynamic> _$EventPositionToJson(EventPosition instance) =>
       'label': instance.label,
       'status': eventPositionStatusToJson(instance.status),
       'sequence': instance.sequence,
-      'rate_setting': _$EventPositionRateSettingEnumMap[instance.rateSetting],
+      'rate_setting': eventPositionRateSettingToJson(instance.rateSetting),
       'rate': instance.rate,
       'rate_currency': instance.rateCurrency,
-      'rate_type': _$EventPositionRateTypeEnumMap[instance.rateType],
+      'rate_type': eventPositionRateTypeToJson(instance.rateType),
       'billed_rate': instance.billedRate,
       'billed_rate_type':
-          _$EventPositionBilledRateTypeEnumMap[instance.billedRateType],
+          eventPositionBilledRateTypeToJson(instance.billedRateType),
       'schedule_begin': _dateToJson(instance.scheduleBegin),
       'schedule_end': _dateToJson(instance.scheduleEnd),
       'day_begin': instance.dayBegin,
@@ -1303,30 +1114,6 @@ Map<String, dynamic> _$EventPositionToJson(EventPosition instance) =>
       'external_code': instance.externalCode,
       'external_remove_date': instance.externalRemoveDate?.toIso8601String(),
     };
-
-const _$EventPositionRateSettingEnumMap = {
-  EventPositionRateSetting.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  EventPositionRateSetting.crewDefault: 'crew_default',
-  EventPositionRateSetting.crewBid: 'crew_bid',
-  EventPositionRateSetting.positionDefined: 'position_defined',
-};
-
-const _$EventPositionRateTypeEnumMap = {
-  EventPositionRateType.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  EventPositionRateType.hourly: 'hourly',
-  EventPositionRateType.daily: 'daily',
-  EventPositionRateType.weekly: 'weekly',
-  EventPositionRateType.event: 'event',
-};
-
-const _$EventPositionBilledRateTypeEnumMap = {
-  EventPositionBilledRateType.swaggerGeneratedUnknown:
-      'swaggerGeneratedUnknown',
-  EventPositionBilledRateType.hourly: 'hourly',
-  EventPositionBilledRateType.daily: 'daily',
-  EventPositionBilledRateType.weekly: 'weekly',
-  EventPositionBilledRateType.event: 'event',
-};
 
 EventRole _$EventRoleFromJson(Map<String, dynamic> json) {
   return EventRole(
@@ -1396,8 +1183,7 @@ EventRosterPosition _$EventRosterPositionFromJson(Map<String, dynamic> json) {
         : DateTime.parse(json['date_added'] as String),
     rate: json['rate'] as String?,
     rateCurrency: json['rate_currency'] as String?,
-    rateType: _$enumDecodeNullable(
-        _$EventRosterPositionRateTypeEnumMap, json['rate_type']),
+    rateType: eventRosterPositionRateTypeFromJson(json['rate_type'] as String?),
     removalReason: json['removal_reason'] as int?,
     totalLabor: json['total_labor'] as String?,
     totalOverhead: json['total_overhead'] as String?,
@@ -1424,21 +1210,12 @@ Map<String, dynamic> _$EventRosterPositionToJson(
       'date_added': instance.dateAdded?.toIso8601String(),
       'rate': instance.rate,
       'rate_currency': instance.rateCurrency,
-      'rate_type': _$EventRosterPositionRateTypeEnumMap[instance.rateType],
+      'rate_type': eventRosterPositionRateTypeToJson(instance.rateType),
       'removal_reason': instance.removalReason,
       'total_labor': instance.totalLabor,
       'total_overhead': instance.totalOverhead,
       'cached_analytics': instance.cachedAnalytics,
     };
-
-const _$EventRosterPositionRateTypeEnumMap = {
-  EventRosterPositionRateType.swaggerGeneratedUnknown:
-      'swaggerGeneratedUnknown',
-  EventRosterPositionRateType.hourly: 'hourly',
-  EventRosterPositionRateType.daily: 'daily',
-  EventRosterPositionRateType.weekly: 'weekly',
-  EventRosterPositionRateType.event: 'event',
-};
 
 EventRosterPositionSerializerNoAnalytics
     _$EventRosterPositionSerializerNoAnalyticsFromJson(
@@ -1475,9 +1252,8 @@ EventRosterPositionSerializerNoAnalytics
         : DateTime.parse(json['date_added'] as String),
     rate: json['rate'] as String?,
     rateCurrency: json['rate_currency'] as String?,
-    rateType: _$enumDecodeNullable(
-        _$EventRosterPositionSerializerNoAnalyticsRateTypeEnumMap,
-        json['rate_type']),
+    rateType: eventRosterPositionSerializerNoAnalyticsRateTypeFromJson(
+        json['rate_type'] as String?),
     removalReason: json['removal_reason'] as int?,
   );
 }
@@ -1502,19 +1278,10 @@ Map<String, dynamic> _$EventRosterPositionSerializerNoAnalyticsToJson(
       'date_added': instance.dateAdded?.toIso8601String(),
       'rate': instance.rate,
       'rate_currency': instance.rateCurrency,
-      'rate_type': _$EventRosterPositionSerializerNoAnalyticsRateTypeEnumMap[
-          instance.rateType],
+      'rate_type': eventRosterPositionSerializerNoAnalyticsRateTypeToJson(
+          instance.rateType),
       'removal_reason': instance.removalReason,
     };
-
-const _$EventRosterPositionSerializerNoAnalyticsRateTypeEnumMap = {
-  EventRosterPositionSerializerNoAnalyticsRateType.swaggerGeneratedUnknown:
-      'swaggerGeneratedUnknown',
-  EventRosterPositionSerializerNoAnalyticsRateType.hourly: 'hourly',
-  EventRosterPositionSerializerNoAnalyticsRateType.daily: 'daily',
-  EventRosterPositionSerializerNoAnalyticsRateType.weekly: 'weekly',
-  EventRosterPositionSerializerNoAnalyticsRateType.event: 'event',
-};
 
 CrewActuals _$CrewActualsFromJson(Map<String, dynamic> json) {
   return CrewActuals(
@@ -1541,7 +1308,7 @@ Event _$EventFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['db_date_updated'] as String),
     division: json['division'] as int?,
-    client: json['client'] as int?,
+    $client: json['client'] as int?,
     venue: json['venue'] as int?,
     market: json['market'] as int?,
     accountEventStatus: json['account_event_status'] as int?,
@@ -1550,8 +1317,8 @@ Event _$EventFromJson(Map<String, dynamic> json) {
     externalCode: json['external_code'] as String?,
     name: json['name'] as String?,
     status: eventStatusFromJson(json['status'] as String?),
-    travelBookingStatus: _$enumDecodeNullable(
-        _$EventTravelBookingStatusEnumMap, json['travel_booking_status']),
+    travelBookingStatus: eventTravelBookingStatusFromJson(
+        json['travel_booking_status'] as String?),
     dateArchived: json['date_archived'] == null
         ? null
         : DateTime.parse(json['date_archived'] as String),
@@ -1610,7 +1377,7 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'db_date_created': instance.dbDateCreated?.toIso8601String(),
       'db_date_updated': instance.dbDateUpdated?.toIso8601String(),
       'division': instance.division,
-      'client': instance.client,
+      'client': instance.$client,
       'venue': instance.venue,
       'market': instance.market,
       'account_event_status': instance.accountEventStatus,
@@ -1620,7 +1387,7 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'name': instance.name,
       'status': eventStatusToJson(instance.status),
       'travel_booking_status':
-          _$EventTravelBookingStatusEnumMap[instance.travelBookingStatus],
+          eventTravelBookingStatusToJson(instance.travelBookingStatus),
       'date_archived': instance.dateArchived?.toIso8601String(),
       'date_begin': _dateToJson(instance.dateBegin),
       'date_end': _dateToJson(instance.dateEnd),
@@ -1644,14 +1411,6 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'hide_name': instance.hideName,
     };
 
-const _$EventTravelBookingStatusEnumMap = {
-  EventTravelBookingStatus.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  EventTravelBookingStatus.draft: 'draft',
-  EventTravelBookingStatus.ready: 'ready',
-  EventTravelBookingStatus.inProgress: 'in_progress',
-  EventTravelBookingStatus.completed: 'completed',
-};
-
 Position _$PositionFromJson(Map<String, dynamic> json) {
   return Position(
     id: json['id'] as int?,
@@ -1671,17 +1430,14 @@ Position _$PositionFromJson(Map<String, dynamic> json) {
     pendingCount: json['pending_count'] as int?,
     classCode: json['class_code'] as String?,
     status: positionStatusFromJson(json['status'] as String?),
-    applicationStatus: _$enumDecodeNullable(
-        _$PositionApplicationStatusEnumMap, json['application_status']),
+    applicationStatus: positionApplicationStatusFromJson(
+        json['application_status'] as String?),
     rate1: json['rate1'] as String?,
-    rate1Type:
-        _$enumDecodeNullable(_$PositionRate1TypeEnumMap, json['rate1_type']),
+    rate1Type: positionRate1TypeFromJson(json['rate1_type'] as String?),
     rate2: json['rate2'] as String?,
-    rate2Type:
-        _$enumDecodeNullable(_$PositionRate2TypeEnumMap, json['rate2_type']),
+    rate2Type: positionRate2TypeFromJson(json['rate2_type'] as String?),
     rate3: json['rate3'] as String?,
-    rate3Type:
-        _$enumDecodeNullable(_$PositionRate3TypeEnumMap, json['rate3_type']),
+    rate3Type: positionRate3TypeFromJson(json['rate3_type'] as String?),
   );
 }
 
@@ -1700,39 +1456,14 @@ Map<String, dynamic> _$PositionToJson(Position instance) => <String, dynamic>{
       'class_code': instance.classCode,
       'status': positionStatusToJson(instance.status),
       'application_status':
-          _$PositionApplicationStatusEnumMap[instance.applicationStatus],
+          positionApplicationStatusToJson(instance.applicationStatus),
       'rate1': instance.rate1,
-      'rate1_type': _$PositionRate1TypeEnumMap[instance.rate1Type],
+      'rate1_type': positionRate1TypeToJson(instance.rate1Type),
       'rate2': instance.rate2,
-      'rate2_type': _$PositionRate2TypeEnumMap[instance.rate2Type],
+      'rate2_type': positionRate2TypeToJson(instance.rate2Type),
       'rate3': instance.rate3,
-      'rate3_type': _$PositionRate3TypeEnumMap[instance.rate3Type],
+      'rate3_type': positionRate3TypeToJson(instance.rate3Type),
     };
-
-const _$PositionApplicationStatusEnumMap = {
-  PositionApplicationStatus.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  PositionApplicationStatus.open: 'open',
-  PositionApplicationStatus.internal: 'internal',
-  PositionApplicationStatus.closed: 'closed',
-};
-
-const _$PositionRate1TypeEnumMap = {
-  PositionRate1Type.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  PositionRate1Type.hourly: 'hourly',
-  PositionRate1Type.daily: 'daily',
-};
-
-const _$PositionRate2TypeEnumMap = {
-  PositionRate2Type.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  PositionRate2Type.hourly: 'hourly',
-  PositionRate2Type.daily: 'daily',
-};
-
-const _$PositionRate3TypeEnumMap = {
-  PositionRate3Type.swaggerGeneratedUnknown: 'swaggerGeneratedUnknown',
-  PositionRate3Type.hourly: 'hourly',
-  PositionRate3Type.daily: 'daily',
-};
 
 Tag _$TagFromJson(Map<String, dynamic> json) {
   return Tag(

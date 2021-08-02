@@ -120,7 +120,7 @@ class _$Lasso extends Lasso {
 
   @override
   Future<Response<ClientAddressesGet$Response>> clientAddressesList(
-      {String? client,
+      {String? $client,
       String? company_name,
       String? contact_name,
       String? street1,
@@ -130,7 +130,7 @@ class _$Lasso extends Lasso {
       int? offset}) {
     final $url = '/client_addresses';
     final $params = <String, dynamic>{
-      'client': client,
+      'client': $client,
       'company_name': company_name,
       'contact_name': contact_name,
       'street1': street1,
@@ -139,12 +139,9 @@ class _$Lasso extends Lasso {
       'limit': limit,
       'offset': offset
     };
-    final $request =
-        Request('GET', $url, this.client.baseUrl, parameters: $params);
-    return this
-        .client
-        .send<ClientAddressesGet$Response, ClientAddressesGet$Response>(
-            $request);
+    final $request = Request('GET', $url, client.baseUrl, parameters: $params);
+    return client.send<ClientAddressesGet$Response,
+        ClientAddressesGet$Response>($request);
   }
 
   @override
@@ -189,7 +186,7 @@ class _$Lasso extends Lasso {
 
   @override
   Future<Response<ClientContactsGet$Response>> clientContactsList(
-      {String? client,
+      {String? $client,
       String? first_name,
       String? last_name,
       String? email,
@@ -199,7 +196,7 @@ class _$Lasso extends Lasso {
       int? offset}) {
     final $url = '/client_contacts';
     final $params = <String, dynamic>{
-      'client': client,
+      'client': $client,
       'first_name': first_name,
       'last_name': last_name,
       'email': email,
@@ -208,10 +205,8 @@ class _$Lasso extends Lasso {
       'limit': limit,
       'offset': offset
     };
-    final $request =
-        Request('GET', $url, this.client.baseUrl, parameters: $params);
-    return this
-        .client
+    final $request = Request('GET', $url, client.baseUrl, parameters: $params);
+    return client
         .send<ClientContactsGet$Response, ClientContactsGet$Response>($request);
   }
 

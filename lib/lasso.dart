@@ -4,6 +4,6 @@
 library dart_lasso;
 
 export 'generated_code/lasso.swagger.dart';
-export 'src/lassoWithAPI.dart';
+export 'src/lasso_with_api.dart';
 
 // TODO: Export any libraries intended for clients of this package.
